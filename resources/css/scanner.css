@@ -1,0 +1,155 @@
+/* ==========================================================================
+   BRIMEN SCANNER V3 - BASE STYLES & INTERACTIVE ANIMATIONS
+   ========================================================================== */
+
+/* 1. Animasi Feeder & Kertas Masuk */
+@keyframes paperGlideFeed {
+    0% {
+        transform: translateY(-18px) scale(0.95);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(16px) scale(1.02);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(54px) scale(0.92);
+        opacity: 0.2;
+    }
+}
+
+.anim-paper-scan-glide {
+    animation: paperGlideFeed 1.15s cubic-bezier(0.4, 0, 0.2, 1) infinite !important;
+    will-change: transform, opacity;
+}
+
+/* 2. Animasi Sapuan Laser Scanner */
+@keyframes laserScanMotion {
+    0% {
+        top: 12%;
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        top: 88%;
+        opacity: 0.65;
+    }
+}
+
+.anim-laser-active {
+    opacity: 1 !important;
+    animation: laserScanMotion 1.1s ease-in-out infinite alternate !important;
+}
+
+/* 3. Efek Hentakan Stempel Verifikasi */
+@keyframes stampSlam {
+    0% {
+        transform: rotate(-14deg) scale(3.2);
+        opacity: 0;
+    }
+    60% {
+        transform: rotate(-14deg) scale(0.92);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(-14deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.anim-slam {
+    display: block !important;
+    animation: stampSlam 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards !important;
+}
+
+/* 4. Efek Getar Layar (Screen Shake) */
+@keyframes shakeEffect {
+    10%, 90% { transform: translate3d(-1.5px, -1px, 0); }
+    20%, 80% { transform: translate3d(2.5px, 1.5px, 0); }
+    30%, 50%, 70% { transform: translate3d(-3.5px, -1.5px, 0); }
+    40%, 60% { transform: translate3d(3.5px, 1.5px, 0); }
+}
+
+.screen-shake {
+    animation: shakeEffect 0.22s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* 5. Animasi Angka Lembar Pop-up */
+@keyframes popNumber {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.35); color: #16a34a; }
+    100% { transform: scale(1); }
+}
+
+.anim-pop {
+    animation: popNumber 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* 6. Animasi Bot AI Companion */
+@keyframes botIdleFloat {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-4px); }
+}
+
+@keyframes botEatingBite {
+    0% { transform: scale(1) translateY(0); }
+    100% { transform: scale(1.06) translateY(3px); }
+}
+
+@keyframes botDance {
+    0% { transform: rotate(-5deg) scale(1.03); }
+    100% { transform: rotate(5deg) scale(1.08); }
+}
+
+.anim-bot-idle {
+    animation: botIdleFloat 2.8s ease-in-out infinite alternate;
+}
+
+.anim-bot-eating {
+    animation: botEatingBite 0.4s ease-in-out infinite alternate;
+}
+
+.anim-bot-celebrate {
+    animation: botDance 0.5s ease-in-out infinite alternate;
+}
+
+/* 7. Indikator Pulse Status */
+@keyframes pulseDot {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.5); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(37, 99, 235, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2563eb;
+    display: inline-block;
+    animation: pulseDot 1.6s infinite;
+}
+
+/* 8. Scrollbar Minimalis Khusus Area Antrean */
+.table-scroll-wrap::-webkit-scrollbar,
+.manifest-box::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.table-scroll-wrap::-webkit-scrollbar-track,
+.manifest-box::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.table-scroll-wrap::-webkit-scrollbar-thumb,
+.manifest-box::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.table-scroll-wrap::-webkit-scrollbar-thumb:hover,
+.manifest-box::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
