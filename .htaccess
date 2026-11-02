@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Lempar metode TRACE & TRACK langsung ke index.php agar ditangkap Stealth Middleware
+    RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK) [NC]
+    RewriteRule ^ index.php [L]
+
+    # Handle Front Controller Laravel
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
