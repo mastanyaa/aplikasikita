@@ -9,7 +9,7 @@
 
 **AplikasiKita** adalah platform operasional internal perbankan berbasis web yang dibangun dengan kerangka kerja modern **Laravel 13** dan runtime **PHP 8.4**. Sistem ini dirancang secara khusus untuk beroperasi mandiri (*offline-first*) di atas perangkat **Mini PC** Linux pada setiap kantor unit kerja operasional.
 
-Aplikasi ini menjamin kelancaran operasional harian kantor unit tanpa ketergantungan koneksi internet publik yang konstan, menyediakan pemantauan komprehensif portofolio debitur secara *real-time*, integrasi tata arsip berkas jaminan digital, pencetakan tanda terima dan label barcode via printer thermal POS58 USB, layanan otomatisasi laporan terjadwal WhatsApp 4 sesi operasional harian, serta pusat kontrol hardware server dan mitigasi keamanan jaringan LAN tingkat tinggi.
+Aplikasi ini menjamin kelancaran operasional harian kantor unit tanpa ketergantungan koneksi internet publik yang konstan, menyediakan pemantauan komprehensif portofolio debitur secara *real-time*, integrasi tata arsip berkas jaminan digital, pencetakan tanda terima dan label tanda pengenal berkas via printer thermal POS58 USB, layanan otomatisasi laporan terjadwal WhatsApp 4 sesi operasional harian, serta pusat kontrol hardware server dan mitigasi keamanan jaringan LAN tingkat tinggi.
 
 Repositori ini berfungsi sebagai **Kanal Distribusi** terpusat untuk mendistribusikan pembaruan sistem secara berkesinambungan (*Pembaruan Otomatis Git*) ke seluruh jaringan perangkat Mini PC yang tersebar di kantor-kantor unit.
 
@@ -136,13 +136,13 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
 
 ---
 
-### 4. Scanner Registrasi Barcode Dokumen Kredit (`/scanner`)
+### 4. Modul Pemindaian & Digitalisasi Berkas Jaminan (`/scanner`)
 
 ![Scanner Registrasi Berkas](docs/screenshots/04_scanner_main.png)
 
-- **Tujuan Operasional**: Antarmuka berkecepatan tinggi untuk pencatatan dan penataan arsip jaminan menggunakan barcode scanner USB.
+- **Tujuan Operasional**: Antarmuka berkecepatan tinggi untuk digitalisasi berkas kredit fisik jaminan dan penataan arsip lemari khazanah.
 - **Fitur Utama**:
-  - Mode Input Otomatis: Deteksi instan pengetikan/pemindaian barcode 15-digit nomor rekening tanpa menyentuh mouse.
+  - Mode Input Otomatis: Deteksi instan pengetikan nomor rekening pinjaman 15-digit untuk memicu scanner fisik atau registrasi lemari.
   - Umpan Balik Suara & Audio Robotik (*Robo-Voice Feedback*): Mengonfirmasi nama debitur dan status berkas secara verbal.
   - Tabel Riwayat Pindai Terkini: Menampilkan daftar berkas yang baru saja diproses beserta status lembar dokumen.
 
@@ -172,7 +172,7 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
   - **Opsi C (Pilihan Manual)**: Pemilihan manual lokasi lemari dan nomor urut boks sesuai kebutuhan fisik khazanah.
   - Mini Manifest Scanned: Ringkasan dokumen digital PDF yang terdaftar.
   - Tabel Agunan Terdaftar: Detail jenis agunan, nomor jaminan, atas nama, nilai tanggungan, dan status Hak Tanggungan (HT).
-  - Tombol **`SIMPAN & CETAK LABEL THERMAL`** untuk mencetak stiker barcode label berkas secara instan.
+  - Tombol **`SIMPAN & CETAK LABEL THERMAL`** untuk mencetak stiker label berkas secara instan.
 
 ---
 
