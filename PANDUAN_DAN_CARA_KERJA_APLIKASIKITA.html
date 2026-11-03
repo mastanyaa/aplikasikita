@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOP & Panduan Cara Kerja AplikasiKita v3.1.12</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap');
+        
+        @page {
+            size: A4 portrait;
+            margin: 20mm 15mm 20mm 15mm;
+            @bottom-right {
+                content: counter(page);
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #1e293b;
+            background: #f8fafc;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .pdf-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px 60px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .print-toolbar {
+            max-width: 900px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #0f172a;
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 8px;
+        }
+
+        .btn-print {
+            background: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .btn-print:hover {
+            background: #1d4ed8;
+        }
+
+        @media print {
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+            .pdf-container {
+                max-width: 100%;
+                padding: 0;
+                box-shadow: none;
+                border: none;
+            }
+            .print-toolbar {
+                display: none !important;
+            }
+            .page-break-before {
+                page-break-before: always !important;
+                margin-top: 20px !important;
+            }
+        }
+
+        .doc-title {
+            font-size: 20pt;
+            font-weight: 800;
+            color: #0f172a;
+            border-bottom: 3px solid #2563eb;
+            padding-bottom: 15px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .bab-header {
+            font-size: 14pt;
+            font-weight: 800;
+            color: #0f172a;
+            background: #f1f5f9;
+            padding: 10px 15px;
+            border-left: 5px solid #2563eb;
+            border-radius: 0 6px 6px 0;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .sub-header {
+            font-size: 13pt;
+            font-weight: 700;
+            color: #1e293b;
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+
+        .h3-title {
+            font-size: 11.5pt;
+            font-weight: 700;
+            color: #334155;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #334155;
+            text-align: justify;
+        }
+
+        .bullet-item {
+            margin-bottom: 6px;
+            color: #334155;
+        }
+
+        .num-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .num-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 10pt;
+            font-weight: 700;
+            border-radius: 99px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .num-content {
+            flex: 1;
+            color: #334155;
+        }
+
+        .table-responsive {
+            margin: 18px 0;
+            overflow-x: auto;
+        }
+
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9.5pt;
+            border: 1px solid #cbd5e1;
+        }
+
+        .styled-table th {
+            background: #0f172a;
+            color: #f8fafc;
+            padding: 9px 12px;
+            text-align: left;
+            font-weight: 700;
+            border: 1px solid #334155;
+        }
+
+        .styled-table td {
+            padding: 8px 12px;
+            border: 1px solid #cbd5e1;
+            vertical-align: top;
+            color: #334155;
+        }
+
+        .styled-table tbody tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .code-diagram {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 9pt;
+            background: #091322;
+            color: #38bdf8;
+            padding: 16px 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #1e293b;
+            margin: 16px 0;
+            line-height: 1.4;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: #f1f5f9;
+            color: #0f172a;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            border: 1px solid #e2e8f0;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 1px dashed #cbd5e1;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="print-toolbar">
+        <div>
+            <b>AplikasiKita v3.1.12</b> &mdash; Dokumen Resmi SOP & Panduan Operasional Sistem
+        </div>
+        <button class="btn-print" onclick="window.print()">🖨️ Cetak / Simpan sebagai PDF</button>
+    </div>
+
+    <div class="pdf-container">
+        <h1 class='doc-title'>📘 PANDUAN STANDAR OPERASIONAL PROSEDUR & CARA KERJA SISTEM APLIKASIKITA</h1>
+<p><b>Platform Tata Kelola Operasional, Monitoring Kredit Portofolio & Tata Arsip Digital Khazanah Unit</b></p>
+<p><i>Versi Dokumen:</i> <code>SOP-AK-v3.1.12</code> | <i>Edisi:</i> November 2026 | <i>Klasifikasi:</i> Dokumen Operasional Internal Unit Kerja</p>
+
+<hr class='section-divider'>
+
+<h2 class='sub-header'>📑 DAFTAR ISI</h2>
+<div class='num-step'><span class='num-badge'>1</span><div class='num-content'>[BAB I — PENDAHULUAN & ARSITEKTUR SISTEM](#bab-i--pendahuluan--arsitektur-sistem)</div></div>
+<div class='num-step'><span class='num-badge'>2</span><div class='num-content'>[BAB II — MATRIKS HAK AKSES & PERAN PENGGUNA](#bab-ii--matriks-hak-akses--peran-pengguna)</div></div>
+<div class='num-step'><span class='num-badge'>3</span><div class='num-content'>[BAB III — SOP PENCARIAN, PEMINJAMAN & PENGEMBALIAN BERKAS (CARIBERKAS)](#bab-iii--sop-pencarian-peminjaman--pengembalian-berkas-cariberkas)</div></div>
+<div class='num-step'><span class='num-badge'>4</span><div class='num-content'>[BAB IV — SOP PEMINDAIAN BARCODE & REGISTRASI LEMARI KHAZANAH (SCANNER)](#bab-iv--sop-pemindaian-barcode--registrasi-lemari-khazanah-scanner)</div></div>
+<div class='num-step'><span class='num-badge'>5</span><div class='num-content'>[BAB V — SOP TATA KELOLA DOKUMEN LUNAS PUTUS](#bab-v--sop-tata-kelola-dokumen-lunas-putus)</div></div>
+<div class='num-step'><span class='num-badge'>6</span><div class='num-content'>[BAB VI — SOP MONITORING PORTOFOLIO KREDIT & PENAGIHAN HARIAN](#bab-vi--sop-monitoring-portofolio-kredit--penagihan-harian)</div></div>
+<div class='num-step'><span class='num-badge'>7</span><div class='num-content'>[BAB VII — SOP AUDIT SPASIAL LEMARI & STOCK OPNAME KHAZANAH](#bab-vii--sop-audit-spasial-lemari--stock-opname-khazanah)</div></div>
+<div class='num-step'><span class='num-badge'>8</span><div class='num-content'>[BAB VIII — SOP KONTROL SERVER MINI PC, PENCADANGAN CLOUD & KEAMANAN LAN](#bab-viii--sop-kontrol-server-mini-pc-pencadangan-cloud--keamanan-lan)</div></div>
+<div class='num-step'><span class='num-badge'>9</span><div class='num-content'>[BAB IX — PANDUAN PENANGANAN KENDALA (TROUBLESHOOTING FAQ)](#bab-ix--panduan-penanganan-kendala-troubleshooting-faq)</div></div>
+
+<hr class='section-divider'>
+
+<h2 class='bab-header page-break-before'>BAB I — PENDAHULUAN & ARSITEKTUR SISTEM</h2>
+
+<h3 class='h3-title'>1.1 Latar Belakang</h3>
+<p>Platform <b>AplikasiKita</b> dibangun untuk menjawab kebutuhan modernisasi tata kelola operasional kantor unit kerja perbankan. Sistem ini menggabungkan manajemen portofolio pinjaman, penataan berkas fisik jaminan di ruang khazanah, digitalisasi arsip pinjaman (Brimen), pencetakan thermal POS58 USB otomatis, dan pemantauan infrastruktur server dalam satu ekosistem terpadu.</p>
+
+<h3 class='h3-title'>1.2 Filosofi *Offline-First*</h3>
+<p>Sistem beroperasi langsung di atas perangkat <b>Mini PC Linux</b> lokal di setiap kantor unit kerja. Pendekatan ini menjamin:</p>
+<li class='bullet-item'><b>Nol Latensi Publik:</b> Akses cepat instan melalui jaringan kabel LAN / Wi-Fi internal unit kerja tanpa terpengaruh gangguan jaringan WAN/Internet.</li>
+<li class='bullet-item'><b>Kemandirian Operasional Penuh:</b> Kantor unit tetap dapat melayani nasabah, memproses pinjaman, menata arsip, dan mencetak dokumen saat koneksi eksternal terputus.</li>
+<li class='bullet-item'><b>Keamanan Data Maksimal:</b> Kredensial dan data nasabah tersimpan di server lokal unit dengan proteksi enkripsi AES-256 dan pembatasan subnet IP.</li>
+
+<hr class='section-divider'>
+
+<h2 class='bab-header page-break-before'>BAB II — MATRIKS HAK AKSES & PERAN PENGGUNA</h2>
+
+<p>Sistem menerapkan prinsip <i>Role-Based Access Control</i> (RBAC) dengan pemisahan tugas (<i>Segregation of Duties</i>):</p>
+
+<div class='table-responsive'><table class='styled-table'>
+<thead><tr><th>Peran Pengguna</th><th>Kode Akun</th><th>Ruang Lingkup Otoritas</th><th>Modul Utama yang Diakses</th></tr></thead><tbody>
+<tr><td><b>Kepala Unit</b></td><td><code>kaunit</code></td><td>Pengawasan manajerial menyeluruh, persetujuan pembukaan blokir, audit portofolio, dan evaluasi KPI kredit.</td><td>Dashboard Eksekutif, Modal Detail Debitur, Tagihan Harian, Monitoring Khazanah.</td></tr>
+<tr><td><b>Petugas Arsip Digital</b></td><td><code>brimen</code></td><td>Pengelolaan dokumen fisik & digital, pemindaian lembar berkas, penataan slot lemari khazanah, mutasi peminjaman berkas.</td><td>Cari Berkas, Scanner Registrasi, Monitoring Lemari, Dokumen Lunas Putus.</td></tr>
+<tr><td><b>Mantri / AO</b></td><td><code>mantri</code></td><td>Pengelolaan nasabah kelolaan, eksekusi penagihan lapangan, permohonan pinjam berkas untuk restrukturisasi/klaim.</td><td>Tagihan Harian, Permintaan Pinjam Berkas, Dashboard Kinerja Mandiri.</td></tr>
+<tr><td><b>Customer Service</b></td><td><code>cs</code></td><td>Verifikasi dokumen nasabah lunas, permohonan pinjam berkas untuk penerbitan surat keterangan lunas/klaim.</td><td>Cari Berkas, Peminjaman Berkas, Dokumen Lunas Putus.</td></tr>
+<tr><td><b>Supervisor Operasional</b></td><td><code>sol</code></td><td>Pengawasan fisik ruang khazanah, verifikasi penyerahan agunan lunas putus ke nasabah, stock opname fisik berkas.</td><td>Cari Berkas, Monitoring Lemari, Dokumen Lunas Putus, Laporan Harian.</td></tr>
+<tr><td><b>Administrator Sistem</b></td><td><code>admin</code></td><td>Pengelolaan infrastruktur Mini PC, pemeliharaan basis data, manajemen jaringan firewall, dan pencadangan Google Drive.</td><td>Pengaturan Server, Keamanan Jaringan, Impor Data Harian, Pembaruan Sistem Git.</td></tr>
+</tbody></table></div>
+
+<hr class='section-divider'>
+
+<h2 class='bab-header page-break-before'>BAB III — SOP PENCARIAN, PEMINJAMAN & PENGEMBALIAN BERKAS (CARIBERKAS)</h2>
+
+<p>Modul <b>Cari Berkas (<code>/cariberkas</code>)</b> adalah instrumen utama untuk melacak keberadaan fisik dokumen kredit dan sertifikat jaminan di ruang khazanah unit kerja.</p>
+
+<pre class='code-diagram'><code>[Ketik&nbsp;Nomor&nbsp;Rekening&nbsp;/&nbsp;Nama&nbsp;Debitur]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Tabel&nbsp;Hasil&nbsp;Pencarian]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Panel&nbsp;Inspektur&nbsp;360°]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;┌──────────┴──────────┐<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>[Posisi:&nbsp;LEMARI]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Posisi:&nbsp;DIPINJAM]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&nbsp;(Double&nbsp;Click)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Double&nbsp;Click)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>[Modal&nbsp;Otorisasi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Modal&nbsp;Status&nbsp;Pinjam<br>&nbsp;&nbsp;Pengambilan]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&nbsp;SLA&nbsp;Durasi]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>[Pilih&nbsp;Peminjam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Klik&nbsp;'KEMBALIKAN<br>&nbsp;&amp;&nbsp;Alasan&nbsp;Pinjam]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KE&nbsp;LEMARI']<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>[Cetak&nbsp;Bukti&nbsp;Struk&nbsp;&nbsp;&nbsp;&nbsp;[Dokumen&nbsp;Kembali<br>&nbsp;&nbsp;Thermal&nbsp;POS58]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ke&nbsp;Slot&nbsp;Asal&nbsp;Lemari]</code></pre>
+
+<h3 class='h3-title'>3.1 Prosedur Pencarian Berkas</h3>
+<div class='num-step'><span class='num-badge'>1</span><div class='num-content'>Masuk ke menu <b>Cari Berkas</b> pada navigasi utama.</div></div>
+<div class='num-step'><span class='num-badge'>2</span><div class='num-content'>Ketik minimal <b>5 digit Nomor Rekening</b> atau <b>3 huruf Nama Debitur</b> pada bilah pencarian.</div></div>
+<div class='num-step'><span class='num-badge'>3</span><div class='num-content'>Klik baris debitur yang sesuai pada tabel hasil pencarian.</div></div>
+<div class='num-step'><span class='num-badge'>4</span><div class='num-content'>Perhatikan <b>Panel Inspektur di sisi kanan</b>:</div></div>
+<p>   - <b>Label Berkas:</b> Menampilkan koordinat lemari berkas (contoh: <code>I-A-1-2</code>) beserta status fisiknya (<code>LEMARI</code>, <code>MANTRI</code>, <code>CS</code>, <code>HILANG</code>, atau <code>LUNAS PUTUS</code>).</p>
+<p>   - <b>Label Agunan:</b> Menampilkan koordinat boks agunan (contoh: <code>II-C-2-154</code>) beserta status fisiknya.</p>
+<p>   - <b>Rincian Pinjaman:</b> Plafond, Tanggal Realisasi, Jatuh Tempo, Mantri Pengelola, dan Segmen Kredit.</p>
+<p>   - <b>Detail Agunan:</b> Jenis jaminan (SHM/BPKB), nomor sertifikat, atas nama pemilik, dan luas/nopol.</p>
+
+<h3 class='h3-title'>3.2 Prosedur Peminjaman Dokumen Fisik (Keluar dari Lemari)</h3>
+<div class='num-step'><span class='num-badge'>1</span><div class='num-content'>Lakukan <i>double click</i> pada baris debitur yang berstatus <b><code>LEMARI</code></b>.</div></div>
+<div class='num-step'><span class='num-badge'>2</span><div class='num-content'>Sistem akan membuka <b>Modal Otorisasi Pengambilan Dokumen</b>.</div></div>
+<div class='num-step'><span class='num-badge'>3</span><div class='num-content'>Pilih identitas peminjam pada menu <i>Role Peminjam</i> (Mantri, CS, SOL, Kaunit, Auditor).</div></div>
+<div class='num-step'><span class='num-badge'>4</span><div class='num-content'>Pilih alasan peminjaman dokumen (Penagihan, Restrukturisasi, Klaim Asuransi, Pengecekan Fisik, atau Keperluan Audit).</div></div>
+<div class='num-step'><span class='num-badge'>5</span><div class='num-content'>Tentukan jenis dokumen yang diambil:</div></div>
+<p>   - <b><code>AMBIL BERKAS SAJA</code></b>: Mengeluarkan map berkas administrasi kredit, agunan tetap di lemari.</p>
+<p>   - <b><code>AMBIL AGUNAN SAJA</code></b>: Mengeluarkan sertifikat jaminan fisik, berkas administrasi tetap di lemari.</p>
+<p>   - <b><code>AMBIL KEDUANYA</code></b>: Mengeluarkan seluruh bundel berkas dan agunan sekaligus.</p>
+<div class='num-step'><span class='num-badge'>6</span><div class='num-content'>Sistem secara otomatis mencetak <b>Lembar Tanda Terima Peminjaman</b> pada printer thermal USB POS58 sebagai bukti mutasi fisik resmi.</div></div>
+
+<h3 class='h3-title'>3.3 Prosedur Pengembalian Dokumen Fisik (Kembali ke Lemari)</h3>
+<div class='num-step'><span class='num-badge'>1</span><div class='num-content'>Lakukan pencarian rekening debitur yang sedang dipinjam.</div></div>
+<div class='num-step'><span class='num-badge'>2</span><div class='num-content'>Lakukan <i>double click</i> pada baris debitur yang berstatus dipinjam.</div></div>
+<div class='num-step'><span class='num-badge'>3</span><div class='num-content'>Sistem akan membuka <b>Modal Status Peminjaman Dokumen</b> yang menampilkan:</div></div>
+<p>   - Nama petugas peminjam.</p>
+<p>   - Waktu peminjaman dan hitungan durasi hari kerja (<i>SLA counter</i>).</p>
+<div class='num-step'><span class='num-badge'>4</span><div class='num-content'>Klik tombol <b><code>KEMBALIKAN KE LEMARI</code></b>.</div></div>
+<div class='num-step'><span class='num-badge'>5</span><div class='num-content'>Sistem mengonfirmasi bahwa dokumen telah kembali secara fisik ke koordinat rak/boks lemari semula dan memperbarui status menjadi <b><code>LEMARI</code></b>.</div></div>
+
+<hr class='section-divider'>
+
+<h2 class='bab-header page-break-before'>BAB IV — SOP PEMINDAIAN BARCODE & REGISTRASI LEMARI KHAZANAH (SCANNER)</h2>
+
+<p>Modul <b>Scanner (<code>/scanner</code>)</b> dirancang untuk alur kerja cepat penataan dokumen baru menggunakan pemindai barcode USB.</p>
+
+<pre class='code-diagram'><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Pindai&nbsp;Barcode&nbsp;Rekening&nbsp;(15&nbsp;Digit)]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Pengecekan&nbsp;Status&nbsp;Scan]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;┌─────────────┴─────────────┐<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>[Belum&nbsp;Pernah&nbsp;di-Scan]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Sudah&nbsp;Selesai&nbsp;di-Scan]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>[Buka&nbsp;Modal&nbsp;Scanner&nbsp;Live]&nbsp;&nbsp;&nbsp;&nbsp;[Buka&nbsp;Modal&nbsp;Registrasi&nbsp;Lemari]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>[Pindai&nbsp;Lembar&nbsp;Dokumen&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Pilih&nbsp;Opsi&nbsp;Slot&nbsp;Penempatan:<br>&nbsp;(SPH,&nbsp;SP,&nbsp;KTP,&nbsp;Agunan)]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Opsi&nbsp;A:&nbsp;Slot&nbsp;Eksisting<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Opsi&nbsp;B:&nbsp;Rekomendasi&nbsp;Sistem<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;Opsi&nbsp;C:&nbsp;Pilih&nbsp;Manual&nbsp;Slot]<br>[Sheet&nbsp;Counter&nbsp;Selesai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&amp;&nbsp;Dokumen&nbsp;Terdaftar]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Verifikasi&nbsp;Detail&nbsp;Agunan<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(SHM/BPKB,&nbsp;HT,&nbsp;Nilai)]<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Klik&nbsp;'SIMPAN&nbsp;&amp;&nbsp;CETAK&nbsp;LABEL']<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Cetak&nbsp;Label&nbsp;Barcode&nbsp;Thermal]</code></pre>
+
+<h3 class='h3-title'>4.1 Pemindaian Dokumen Baru (*Unscanned Record*)</h3>
+<div class='num-step'><span class='num-badge'>1</span><div class='num-content'>Posisikan kursor pada kolom pemindaian barcode <code>/scanner</code>.</div></div>
+<div class='num-step'><span class='num-badge'>2</span><div class='num-content'>Arahkan barcode scanner pada stiker nomor rekening debitur atau ketik 15 digit nomor rekening.</div></div>
+<div class='num-step'><span class='num-badge'>3</span><div class='num-content'>Jika debitur belum pernah dipindai, sistem otomatis membuka <b>Modal Scanner Pemindaian Live</b>:</div></div>
+<p>   - Memeriksa konektivitas modul pemindai lokal.</p>
+<p>   - Menghitung mundur sensor pengumpan lembar (<i>feeder auto-sensor</i>).</p>
+<p>   - Menampilkan manifes kelengkapan lembar: SPH, Surat Pengakuan Hutang, KTP Pemohon & Pasangan, Kartu Keluarga, dan Dokumen Agunan.</p>
+<div class='num-step'><span class='num-badge'>4</span><div class='num-content'>Setelah seluruh lembar fisik masuk ke mesin scanner dan tercatat di folder unit, klik tombol selesai untuk menyimpan data pindaian.</div></div>
+
+<h3 class='h3-title'>4.2 Registrasi Koordinat Lemari & Boks Khazanah (*Scanned Record*)</h3>
+<div class='num-step'><span class='num-badge'>1</span><div class='num-content'>Masukkan nomor rekening debitur yang status pindainya telah berhasil.</div></div>
+<div class='num-step'><span class='num-badge'>2</span><div class='num-content'>Sistem secara otomatis membuka <b>Modal Registrasi & Penataan Lemari</b>:</div></div>
+<p>   - <b>Opsi A (Slot Eksisting):</b> Dipilih jika debitur suplesi/perpanjangan dan berkas lamanya sudah memiliki slot permanen.</p>
+<p>   - <b>Opsi B (Rekomendasi Sistem):</b> Sistem secara cerdas mencarikan boks kosong terdekat dengan tingkat keterisian optimal.</p>
+<p>   - <b>Opsi C (Pilihan Manual):</b> Petugas menentukan sendiri Ruangan Khazanah, Lemari, Nomor Rak, dan Nomor Urut Boks.</p>
+<div class='num-step'><span class='num-badge'>3</span><div class='num-content'><b>Perekaman Spesifikasi Agunan:</b></div></div>
+<p>   - Verifikasi daftar agunan yang tertera pada tabel.</p>
+<p>   - Jika ada agunan tambahan, klik <b><code>+ Tambah Agunan</code></b> untuk membuka sub-modal input jaminan:</p>
+<p>     - Pilih <i>chip</i> tipe jaminan: <code>SHM</code>, <code>SHGB</code>, <code>BPKB</code>, <code>AJB</code>, dll.</p>
+<p>     - Isi nomor sertifikat/BPKB, nama pemilik pada sertifikat, luas tanah/nomor polisi, dan lokasi agunan.</p>
+<p>     - Cantumkan nomor akta Hak Tanggungan (HT) dan nominal Nilai Tanggungan jika dibebani HT.</p>
+<div class='num-step'><span class='num-badge'>4</span><div class='num-content'>Klik tombol <b><code>SIMPAN & CETAK LABEL THERMAL</code></b>:</div></div>
+<p>   - Data koordinat fisik lemari tersimpan di database unit.</p>
+<p>   - Printer thermal POS58 USB otomatis mencetak stiker barcode label berkas untuk ditempelkan pada map fisik arsip.</p>
+
+<hr class='section-divider'>
+
+<h2 class='bab-header page-break-before'>BAB V — SOP TATA KELOLA DOKUMEN LUNAS PUTUS</h2>
+
+<p>Modul <b>Dokumen Lunas Putus (<code>/dokumen/lunas-putus</code>)</b> mengatur keamanan pengembalian agunan asli kepada debitur yang pinjamannya telah selesai.</p>
+
+<h3 class='h3-title'>5.1 Prinsip Verifikasi Lunas Putus vs Real Kembali</h3>
+<li class='bullet-item'><b>LUNAS PUTUS:</b> Debitur yang telah menyelesaikan pinjamannya dan <b>tidak memiliki rekening pinjaman aktif lain</b> pada CIF yang bersangkutan di data nominatif harian (<code>data_lw321harian</code>). Dokumen agunan fisik berhak diambil oleh debitur.</li>
+<li class='bullet-item'><b>REAL KEMBALI:</b> Debitur yang fasilitas pinjaman lamanya telah lunas namun CIF-nya <b>terdaftar kembali memiliki pinjaman aktif baru</b> (suplesi / realisasi baru). Dokumen agunan fisik <b>wajib dipertahankan di lemari aktif</b> sebagai jaminan fasilitas berjalan.</li>
+
+<h3 class='h3-title'>5.2 Prosedur Penyerahan Agunan Fisik ke Nasabah</h3>
+<div class='num-step'><span class='num-badge'>1</span><div class='num-content'>Masuk ke menu <b>Dokumen Lunas Putus</b>.</div></div>
+<div class='num-step'><span class='num-badge'>2</span><div class='num-content'>Cari nama nasabah pada daftar antrean berkas lunas.</div></div>
+<div class='num-step'><span class='num-badge'>3</span><div class='num-content'>Ambil map berkas fisik dari lemari khazanah.</div></div>
+<div class='num-step'><span class='num-badge'>4</span><div class='num-content'>Buka modal serah terima dokumen:</div></div>
+<p>   - Verifikasi keaslian dokumen agunan fisik bersama nasabah (cek nomor SHM/BPKB dan nama pemilik).</p>
+<p>   - Masukkan identitas pengambil (Debitur Asli / Kuasa Ahli Waris berdokumen lengkap).</p>
+<p>   - Ambil tanda tangan digital / bukti fisik penyerahan.</p>
+<div class='num-step'><span class='num-badge'>5</span><div class='num-content'>Klik <b><code>VALIDASI PENYERAHAN AGUNAN</code></b>:</div></div>
+<p>   - Status berkas berpindah ke rak arsip lunas putus.</p>
+<p>   - Riwayat audit pencatatan tanggal, jam penyerahan, dan identitas petugas tersimpan permanen.</p>
+
+<hr class='section-divider'>
+
+<h2 class='bab-header page-break-before'>BAB VI — SOP MONITORING PORTOFOLIO KREDIT & PENAGIHAN HARIAN</h2>
+
+<h3 class='h3-title'>6.1 Monitoring Portofolio & Kuadran Risiko (`/dashboard`)</h3>
+<div class='num-step'><span class='num-badge'>1</span><div class='num-content'>Buka halaman <b>Dashboard Monitoring Portofolio</b>.</div></div>
+<div class='num-step'><span class='num-badge'>2</span><div class='num-content'>Pantau <b>8 Kartu KPI Utama</b>:</div></div>
+<p>   - <i>Total OS:</i> Total baki debet berjalan kantor unit.</p>
+<p>   - <i>DPK:</i> Total simpanan tabungan dan giro.</p>
+<p>   - <i>NPL:</i> Persentase kredit bermasalah (Kolektibilitas 3, 4, 5).</p>
+<p>   - <i>LAR:</i> Kredit dalam perhatian khusus + NPL + Restrukturisasi.</p>
+<p>   - <i>Realisasi & Run-Off:</i> Perbandingan ekspansi baki debet terhadap penurunan pinjaman jatuh tempo.</p>
+<div class='num-step'><span class='num-badge'>3</span><div class='num-content'>Analisis <b>Matriks Kuadran Transisi Portofolio</b>:</div></div>
+<p>   - <i>Kuadran Extreme Low / Low:</i> Debitur berkinerja lancar dengan kepatuhan tinggi.</p>
+<p>   - <i>Kuadran Mid / High:</i> Debitur berpotensi pemburukan atau memerlukan restrukturisasi proaktif.</p>
+<div class='num-step'><span class='num-badge'>4</span><div class='num-content'>Klik sel mana pun pada tabel atau kartu KPI untuk membuka <b>Modal Universal Detail Debitur</b>:</div></div>
+<p>   - Manfaatkan bilah <b>Filter Cepat</b> (KUR/Kupedes, Bulanan/Musiman, Belum Bayar, Kolek 1-5).</p>
+<p>   - Beralih ke tab <b>Proyeksi Esok Hari (H+1)</b> untuk memetakan jadwal tagihan dan potensi penurunan baki debet esok hari.</p>
+<p>   - Ekspor data hasil filter ke format Excel melalui tombol <b><code>Unduh Excel</code></b>.</p>
+
+<h3 class='h3-title'>6.2 Eksekusi Tagihan Harian Mantri (`/tagihan`)</h3>
+<div class='num-step'><span class='num-badge'>1</span><div class='num-content'>Setiap pagi pasca-sinkronisasi data harian, Mantri membuka menu <b>Tagihan Harian</b>.</div></div>
+<div class='num-step'><span class='num-badge'>2</span><div class='num-content'>Pilih nama Mantri pengelola dan desa binaan pada dropdown filter.</div></div>
+<div class='num-step'><span class='num-badge'>3</span><div class='num-content'>Periksa daftar debitur yang memiliki kewajiban tagihan hari ini:</div></div>
+<p>   - Identifikasi debitur belum bayar, nominal tunggakan pokok, dan tunggakan bunga.</p>
+<div class='num-step'><span class='num-badge'>4</span><div class='num-content'>Klik ikon <b><code>Cetak Struk Tagihan</code></b> untuk mencetak struk tagihan kasir thermal POS58 USB sebelum berangkat kunjungan lapangan.</div></div>
+<div class='num-step'><span class='num-badge'>5</span><div class='num-content'>Pantau realisasi pembayaran harian secara <i>real-time</i> saat debitur melakukan setoran melalui teller atau agen bank.</div></div>
+
+<hr class='section-divider'>
+
+<h2 class='bab-header page-break-before'>BAB VII — SOP AUDIT SPASIAL LEMARI & STOCK OPNAME KHAZANAH</h2>
+
+<p>Modul <b>Monitoring Lemari (<code>/monitoring-lemari</code>)</b> berfungsi sebagai sarana audit fisik ruang khazanah unit.</p>
+
+<h3 class='h3-title'>7.1 Pemantauan Tingkat Keterisian (*Fill Rate*)</h3>
+<li class='bullet-item'>Buka menu <b>Monitoring Lemari</b>.</li>
+<li class='bullet-item'>Tinjau visualisasi grid lemari khazanah:</li>
+<p>  - <b>Indikator Hijau:</b> Boks memiliki kapasitas longgar (tersedia untuk penempatan berkas baru).</p>
+<p>  - <b>Indikator Kuning:</b> Boks terisi lebih dari 80% (mendekati batas muat).</p>
+<p>  - <b>Indikator Merah:</b> Boks terisi 100% penuh (tidak boleh ditambah berkas lagi).</p>
+
+<h3 class='h3-title'>7.2 Pelaksanaan Stock Opname Fisik</h3>
+<div class='num-step'><span class='num-badge'>1</span><div class='num-content'>Supervisor Layanan (SOL) atau Petugas Brimen melakukan stock opname periodik (minimal 1 bulan sekali).</div></div>
+<div class='num-step'><span class='num-badge'>2</span><div class='num-content'>Cocokkan jumlah map fisik di dalam boks dengan daftar rekening yang tertera di sistem.</div></div>
+<div class='num-step'><span class='num-badge'>3</span><div class='num-content'>Jika ditemukan berkas yang tidak berada di tempatnya, periksa statusnya di menu <b>Cari Berkas</b>:</div></div>
+<p>   - Pastikan apakah sedang berstatus dipinjam (cek nama peminjam dan SLA pinjam).</p>
+<p>   - Jika tidak tercatat di daftar pinjam, segera lakukan penelusuran fisik dan update status opname.</p>
+
+<hr class='section-divider'>
+
+<h2 class='bab-header page-break-before'>BAB VIII — SOP KONTROL SERVER MINI PC, PENCADANGAN CLOUD & KEAMANAN LAN</h2>
+
+<p>Modul <b>Pengaturan Server (<code>/pengaturan/server</code>)</b> didedikasikan bagi Administrator dan Kepala Unit untuk menjaga reliabilitas hardware Mini PC.</p>
+
+<h3 class='h3-title'>8.1 Telemetri Kesehatan Hardware Mini PC</h3>
+<li class='bullet-item'><b>Suhu CPU:</b> Suhu operasional normal berada di kisaran 40°C – 65°C. Jika suhu melebihi 75°C, pastikan sirkulasi udara di ruang server kantor unit lancar dan bersihkan ventilasi Mini PC.</li>
+<li class='bullet-item'><b>Konsumsi RAM:</b> Kapasitas RAM 2 GB – 4 GB harus dijaga dengan tingkat utilisasi di bawah 85%. Sistem dilengkapi optimasi engine otomatis yang membersihkan cache memori setiap siklus rilis.</li>
+<li class='bullet-item'><b>Penyimpanan Storage:</b> Pastikan sisa ruang disk internal eMMC/SSD di atas 1 GB. Log transaksi lama dan berkas laporan sementara otomatis dibersihkan secara berkala.</li>
+
+<h3 class='h3-title'>8.2 Otomatisasi Pencadangan Cloud Google Drive</h3>
+<div class='num-step'><span class='num-badge'>1</span><div class='num-content'>Sistem menjalankan modul pencadangan basis data dan dokumen digital terenkripsi ke Google Drive unit kerja setiap hari.</div></div>
+<div class='num-step'><span class='num-badge'>2</span><div class='num-content'>Status kuota Google Drive (terpakai vs total kapasitas) terpantau langsung pada panel server.</div></div>
+<div class='num-step'><span class='num-badge'>3</span><div class='num-content'>Jika diperlukan pencadangan manual sebelum pemeliharaan, klik tombol <b><code>Cadangkan Sekarang</code></b>.</div></div>
+
+<h3 class='h3-title'>8.3 Keamanan Perimeter Jaringan LAN & Whitelist Wi-Fi</h3>
+<li class='bullet-item'><b>Antarmuka Ganda Terisolasi:</b></li>
+<p>  - Port Ethernet LAN kabel dialokasikan untuk operasional reguler (Teller, CS, PC Kerja).</p>
+<p>  - Jaringan nirkabel (Wi-Fi) diisolasi dengan proteksi <b>Whitelist Maksimal 3 Alamat IP Terdaftar</b>. Hanya perangkat terpercaya Kepala Unit dan Administrator yang dapat mengakses sistem via Wi-Fi.</p>
+<li class='bullet-item'><b>Mitigasi Serangan:</b> Sistem otomatis memblokir upaya akses (<i>brute-force lockout</i>) di luar subnet resmi unit kerja.</li>
+
+<hr class='section-divider'>
+
+<h2 class='bab-header page-break-before'>BAB IX — PANDUAN PENANGANAN KENDALA (TROUBLESHOOTING FAQ)</h2>
+
+<div class='table-responsive'><table class='styled-table'>
+<thead><tr><th>Gejala Kendala</th><th>Kemungkinan Penyebab</th><th>Langkah Penanganan Terstandarisasi</th></tr></thead><tbody>
+<tr><td><b>Printer Thermal POS58 tidak merespons cetak.</b></td><td>Kabel USB printer longgar atau port <code>/dev/usb/lp0</code> belum terdeteksi sistem.</td><td>1. Periksa kabel USB dan lampu indikator printer.<br>2. Masuk ke <code>/pengaturan/server?tab=server</code>, periksa status <b>CUPS Daemon</b>.<br>3. Cabut dan colokkan kembali kabel USB printer, lalu lakukan tes cetak ulang.</td></tr>
+<tr><td><b>Data baki debet hari ini belum terbarui.</b></td><td>Berkas nominatif harian belum diunggah ke sistem.</td><td>1. Masuk ke menu <code>/import</code>.<br>2. Unggah berkas nominatif harian terbaru (<code>data_lw321harian</code>).<br>3. Tunggu hingga proses validasi integritas database selesai dan tampil notifikasi sukses.</td></tr>
+<tr><td><b>Pesan <i>"Akses Dibatasi oleh Keamanan Jaringan"</i> saat login.</b></td><td>Perangkat mengakses melalui alamat IP di luar subnet resmi atau IP nirkabel belum didaftarkan di whitelist.</td><td>1. Gunakan komputer unit yang terhubung kabel LAN resmi.<br>2. Jika menggunakan laptop Kaunit melalui Wi-Fi, minta Administrator mendaftarkan IP laptop pada menu <code>/pengaturan/server?tab=security</code>.</td></tr>
+<tr><td><b>Tampilan data modal debitur terasa lambat.</b></td><td>Cache sementara browser atau framework Laravel menumpuk.</td><td>1. Tekan tombol <code>Ctrl + Shift + R</code> pada browser untuk membersihkan cache lokal.<br>2. Pada server, jalankan perintah rilis standar yang otomatis mengeksekusi <code>php artisan optimize:clear</code>.</td></tr>
+</tbody></table></div>
+
+<hr class='section-divider'>
+
+<p><i>Disahkan untuk Implementasi Operasional Seluruh Kantor Unit Kerja.</i></p>
+<p><b>Tim Pengembang & Tata Kelola Operasional — AplikasiKita 2026</b></p>
+    </div>
+</body>
+</html>
