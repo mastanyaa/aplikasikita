@@ -8,7 +8,7 @@ return [
     | Format Semantic Versioning: MAJOR.MINOR.PATCH
     | Format Tag Rilis: AplikasiKita-v{MAJOR}.{MINOR}.{PATCH}
     */
-    'version'      => env('APP_VERSION', '3.1.6'),
+    'version'      => env('APP_VERSION', '3.1.7'),
     'codename'     => 'Vanguard',
     'build'        => env('APP_BUILD', '20261103'),
     'release_date' => '2026-11-03',
@@ -21,6 +21,18 @@ return [
     |--------------------------------------------------------------------------
     */
     'changelog' => [
+        '3.1.7' => [
+            'date'     => '2026-11-03',
+            'title'    => 'Penataan Responsif Multi-Screen Baseline-Realtime-Delta, Pewarnaan Header Kategori, Restorasi Kuadran & Run-Off, dan Eliminasi Garis Col-Gap',
+            'changes'  => [
+                'Penataan Proporsional Responsif Multi-Screen (1366px s/d 1920px): Menerapkan sistem colgroup persentase serempak pada tabel Baseline, Realtime, dan Delta sehingga teks Nama Mantri, nominal OS, dan lencana Kuadran tidak terpotong serta seluruh garis vertikal kolom sejajar presisi 100%.',
+                'Pewarnaan Kategori Header Tabel (Lancar s/d Musiman): Menerapkan skema warna kategori pastel (Lancar, SML 1-3, KL, D, Macet, Total, SML, NPL, Bulanan, Musiman) pada header tabel monitoring kredit untuk meningkatkan keterbacaan data.',
+                'Restorasi Kolom Kuadran & Run-Off: Mengembalikan badge Kuadran (Extreme Low, Low, Mid, High) dengan palet warna asli dan memulihkan kalkulasi data Run-Off pada mutasi Delta.',
+                'Eliminasi Garis Mengganggu Col-Gap: Menghilangkan border pada seluruh sel pemisah (col-gap) antara Total, SML, dan indikator lainnya sehingga celah tabel bersih dan seamless.',
+                'Perbaikan Interaktivitas Modal Detail & Profil Debitur: Memperbaiki interpolasi Blade onclick pada kolom Potensi Real & Recovery sehingga seluruh modal dapat dibuka dan menampilkan data secara normal tanpa error.',
+                'Harmonisasi Kontras Teks PTP & Seleksi Baris: Memastikan teks nominal OS pada seleksi baris aktif tetap terbaca dengan kontras putih bersih saat disorot.',
+            ],
+        ],
         '3.1.6' => [
             'date'     => '2026-11-03',
             'title'    => 'Pembersihan Berkas Duplikat, Audit Dead Code, Dokumentasi Komprehensif & Penguatan Enkripsi Rilis',

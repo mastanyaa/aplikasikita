@@ -6,6 +6,23 @@ Format penomoran versi mengikuti standar [Semantic Versioning](https://semver.or
 
 ---
 
+## v3.1.7 — Penataan Responsif Multi-Screen, Restorasi Kuadran & Run-Off, Eliminasi Garis Col-Gap
+**Tanggal:** 3 November 2026
+
+### Fitur & Antarmuka
+- **Responsif Proporsional Multi-Screen (1366px – 1920px):** Penataan kolom serempak 36 kolom pada tabel Baseline, Realtime, dan Delta dengan rasio persentase dinamis. Seluruh teks (Nama Mantri, Nominal OS jutaan, dan Badge Kuadran) tampil utuh tanpa terpotong dan garis pemisah kolom sejajar tegak lurus sempurna.
+- **Restorasi Kolom Kuadran & Pewarnaan Asli:** Memulihkan badge Kuadran (*Extreme Low, Low, Mid, High*) beserta kode warna aslinya pada tabel Realtime.
+- **Pemulihan Data Run-Off Mutasi Delta:** Menjamin data debitur dan baki debet Run-Off terisi akurat sesuai kalkulasi historis mutasi harian.
+- **Pembersihan Celah Kolom (`col-gap`):** Menghilangkan garis border mengganggu pada pemisah antara Total dan SML serta antar-seksi tabel.
+- **Harmonisasi Kontras PTP pada Seleksi Baris:** Warna teks nominal OS otomatis menyesuaikan kontras putih saat baris terseleksi aktif.
+
+- **Pewarnaan Kategori Header Tabel (Lancar s/d Musiman):** Menerapkan palet warna pastel kontras dan terstandarisasi pada header kategori (Lancar, SML 1-3, KL, D, Macet, Total, SML, NPL, Bulanan, Musiman) guna meningkatkan kecepatan pembacaan data monitoring.
+
+### Perbaikan & Keandalan
+- **Interaktivitas Modal Debitur:** Memperbaiki fungsi klik pada kolom Potensi Real & Recovery menuju modal detail debitur dan modal profil debitur lengkap.
+
+---
+
 ## v3.1.6 — Pembersihan Berkas Duplikat, Audit Dead Code & Penguatan Enkripsi Rilis
 **Tanggal:** 3 November 2026
 
