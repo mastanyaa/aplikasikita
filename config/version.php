@@ -8,10 +8,10 @@ return [
     | Format Semantic Versioning: MAJOR.MINOR.PATCH
     | Format Tag Rilis: AplikasiKita-v{MAJOR}.{MINOR}.{PATCH}
     */
-    'version'      => env('APP_VERSION', '3.1.5'),
+    'version'      => env('APP_VERSION', '3.1.6'),
     'codename'     => 'Vanguard',
-    'build'        => env('APP_BUILD', '20261031'),
-    'release_date' => '2026-10-31',
+    'build'        => env('APP_BUILD', '20261103'),
+    'release_date' => '2026-11-03',
     'min_php'      => '8.2.0',
     'default_uker' => env('APP_UKER', 'UNIT KERJA'),
 
@@ -21,6 +21,16 @@ return [
     |--------------------------------------------------------------------------
     */
     'changelog' => [
+        '3.1.6' => [
+            'date'     => '2026-11-03',
+            'title'    => 'Pembersihan Berkas Duplikat, Audit Dead Code, Dokumentasi Komprehensif & Penguatan Enkripsi Rilis',
+            'changes'  => [
+                'Pembersihan Berkas Duplikat & Dead Code: Mengaudit dan mengeliminasi berkas duplikat tampilan view, berkas backup sementara (.bak, .tmp), serta dependensi usang pada controller dan middleware.',
+                'Dokumentasi Komprehensif Kode Sumber: Melengkapi docblock dan penjelasan fungsi teknis serta alur operasional pada seluruh controller dan registri rute master project_aplikasikita.',
+                'Penguatan Enkripsi & Penyamaran Distribusi: Memastikan seluruh kode rilis di GitHub dan armada Mini PC terenkripsi AES-256 tanpa komentar, tanpa kebocoran logika, dan tersamar penuh.',
+                'Proteksi Perangkat Keras Flashdisk: Menerapkan verifikasi deteksi fisik flashdisk master kerja sebelum eksekusi pipeline enkripsi dan deployment.',
+            ],
+        ],
         '3.1.5' => [
             'date'     => '2026-10-31',
             'title'    => 'Input Target & Posisi Riil Recovery DH, Presisi Modal Nett Disbursement & Keamanan Rilis',
