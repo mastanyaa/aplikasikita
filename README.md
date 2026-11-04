@@ -91,7 +91,7 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
 
 ![Pencarian Berkas & Manajemen Agunan Fisik](docs/screenshots/03_cariberkas_pencarian.png)
 
-- **Tujuan Operasional**: Mesin pencari instan arsip dokumen kredit dan jaminan fisik dengan pemetaan spasial ruang khazanah unit.
+- **Tujuan Operasional**: Mesin pencari instan arsip dokumen kredit dan jaminan fisik dengan pemetaan spasial ruang arsip berkas unit.
 - **Fitur Utama**:
   - Pencarian multi-kriteria: Nomor Rekening (minimal 5 digit), Nama Debitur (minimal 3 huruf), Nomor CIF, atau Nomor Agunan (SHM/BPKB).
   - Panel Inspektur Berkas 360°: Menampilkan identitas debitur terpilih, status kelengkapan dokumen, plafond, tanggal realisasi, jatuh tempo, Mantri pengelola, dan rincian agunan.
@@ -103,7 +103,7 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
 
 ![Modal Otorisasi Pengambilan Dokumen](docs/screenshots/03b_cariberkas_modal_pengambilan.png)
 
-- **Tujuan Operasional**: Kontrol mutasi dokumen fisik keluar dari lemari penyimpanan khazanah unit kerja.
+- **Tujuan Operasional**: Kontrol mutasi dokumen fisik keluar dari lemari penyimpanan ruang arsip unit kerja.
 - **Fitur Utama**:
   - Pemilihan Peminjam Dokumen: Pilihan peran petugas (Mantri Pengelola, CS, SOL, Kaunit, atau Auditor).
   - Pencatatan Alasan Peminjaman: Penagihan nasabah, klaim asuransi, restrukturisasi kredit, pengecekan agunan, atau keperluan audit.
@@ -140,7 +140,7 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
 
 ![Scanner Registrasi Berkas](docs/screenshots/04_scanner_main.png)
 
-- **Tujuan Operasional**: Antarmuka berkecepatan tinggi untuk digitalisasi berkas kredit fisik jaminan dan penataan arsip lemari khazanah.
+- **Tujuan Operasional**: Antarmuka berkecepatan tinggi untuk digitalisasi berkas kredit fisik jaminan dan penataan arsip lemari arsip berkas.
 - **Fitur Utama**:
   - Mode Input Otomatis: Deteksi instan pengetikan nomor rekening pinjaman 15-digit untuk memicu scanner fisik atau registrasi lemari.
   - Umpan Balik Suara & Audio Robotik (*Robo-Voice Feedback*): Mengonfirmasi nama debitur dan status berkas secara verbal.
@@ -161,15 +161,15 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
 
 ---
 
-### 4c. Modal Registrasi & Penataan Slot Lemari Khazanah (*Scanned Record*)
+### 4c. Modal Registrasi & Penataan Slot Lemari Arsip berkas (*Scanned Record*)
 
 ![Modal Registrasi & Penataan Slot Lemari](docs/screenshots/04c_scanner_modal_registrasi.png)
 
-- **Tujuan Operasional**: Penentuan koordinat lokasi penyimpanan fisik berkas dan agunan di lemari khazanah pasca-pemindaian.
+- **Tujuan Operasional**: Penentuan koordinat lokasi penyimpanan fisik berkas dan agunan di lemari arsip berkas pasca-pemindaian.
 - **Fitur Utama**:
   - **Opsi A (Slot Eksisting)**: Mempertahankan koordinat lemari lama jika berkas sudah memiliki slot sebelumnya.
   - **Opsi B (Rekomendasi Sistem)**: Rekomendasi otomatis slot lemari dan boks kosong terdekat yang optimal.
-  - **Opsi C (Pilihan Manual)**: Pemilihan manual lokasi lemari dan nomor urut boks sesuai kebutuhan fisik khazanah.
+  - **Opsi C (Pilihan Manual)**: Pemilihan manual lokasi lemari dan nomor urut boks sesuai kebutuhan fisik ruang arsip.
   - Mini Manifest Scanned: Ringkasan dokumen digital PDF yang terdaftar.
   - Tabel Agunan Terdaftar: Detail jenis agunan, nomor jaminan, atas nama, nilai tanggungan, dan status Hak Tanggungan (HT).
   - Tombol **`SIMPAN & CETAK LABEL THERMAL`** untuk mencetak stiker label berkas secara instan.
@@ -188,13 +188,13 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
 
 ---
 
-### 4e. Sub-Modal Pemilihan Manual Slot Lemari & Boks Khazanah
+### 4e. Sub-Modal Pemilihan Manual Slot Lemari & Boks ruang arsip
 
 ![Sub-Modal Pemilihan Manual Slot Lemari](docs/screenshots/04e_scanner_submodal_manual_slot.png)
 
-- **Tujuan Operasional**: Penempatan spasial presisi saat operator ingin menata berkas pada rak atau boks tertentu di ruang khazanah.
+- **Tujuan Operasional**: Penempatan spasial presisi saat operator ingin menata berkas pada rak atau boks tertentu di ruang arsip berkas.
 - **Fitur Utama**:
-  - Pemilihan Ruangan Khazanah, Nomor Lemari, Nomor Rak, dan Nomor Urut Dokumen.
+  - Pemilihan Ruangan ruang arsip, Nomor Lemari, Nomor Rak, dan Nomor Urut Dokumen.
   - Deteksi otomatis kapasitas boks terisi agar tidak melebihi batas muat fisik.
 
 ---
@@ -212,16 +212,16 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
 
 ---
 
-### 6. Monitoring Denah Spasial Lemari & Kapasitas Boks Khazanah (`/monitoring-lemari`)
+### 6. Monitoring Denah Spasial Lemari & Kapasitas Boks ruang arsip (`/monitoring-lemari`)
 
 ![Monitoring Denah & Kapasitas Lemari](docs/screenshots/06_monitoring_lemari.png)
 
-- **Tujuan Operasional**: Representasi visual denah lemari dan tingkat keterisian ruang khazanah kantor unit kerja.
+- **Tujuan Operasional**: Representasi visual denah lemari dan tingkat keterisian ruang arsip berkas kantor unit kerja.
 - **Fitur Utama**:
   - Visualisasi Grid Spasial: Menampilkan seluruh lemari, rak, dan boks penyimpanan secara proporsional.
   - Indikator Kapasitas (*Fill Rate*): Kode warna status keterisian boks (Hijau: Tersedia, Kuning: Hampir Penuh, Merah: Penuh).
   - Manajemen Tambah/Hapus Boks dan Penataan Ulang Nomor Urut Penyimpanan.
-  - Alat Audit Cepat Khazanah: Mempermudah pelaksanaan stock opname fisik berkas secara berkala.
+  - Alat Audit Cepat ruang arsip: Mempermudah pelaksanaan stock opname fisik berkas secara berkala.
 
 ---
 
