@@ -1,7 +1,7 @@
 # 🚀 APLIKASIKITA (Platform Operasional Mini PC)
 
 **Platform Digital Tata Kelola Operasional, Monitoring Portofolio Pinjaman & Tata Arsip Digital**  
-*Versi:* `AplikasiKita-v3.2.3` | *Codename:* `Vanguard` | *Build:* `#20261104` | *Target Arsitektur:* Multi-Unit Mini PC Linux (Armbian/Debian/Ubuntu ARM64 & x86_64)
+*Versi:* `AplikasiKita-v3.2.4` | *Codename:* `Vanguard` | *Build:* `#20261104` | *Target Arsitektur:* Multi-Unit Mini PC Linux (Armbian/Debian/Ubuntu ARM64 & x86_64)
 
 ---
 
