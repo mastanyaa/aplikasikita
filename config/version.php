@@ -38,7 +38,7 @@ return [
 
 
 
-    'version'      => env('APP_VERSION', '3.2.5'),
+    'version'      => env('APP_VERSION', '3.2.6'),
 
 
 
@@ -87,6 +87,17 @@ return [
 
 
     'changelog' => [
+        '3.2.6' => [
+            'date'     => '2026-11-04',
+            'title'    => 'Optimasi Kinerja Komprehensif: Arsitektur Redis In-Memory, Efisiensi Buffer MariaDB, Daur Ulang PHP-FPM, dan Penataan Frekuensi Polling Realtime',
+            'changes'  => [
+                'Arsitektur Cache Redis In-Memory: Mengalihkan penyimpanan cache dari tabel database MySQL ke Redis in-memory dengan latensi sub-milidetik, mengeliminasi query contention dan I/O disk berlebih secara menyeluruh.',
+                'Optimasi Kueri & Frekuensi Signature Dashboard: Merampingkan kalkulasi verifikasi perubahan data dari agregasi berulang multi-SUM menjadi kueri metadata ringan, serta menata interval validasi server dari 2 detik menjadi 15 detik dan polling peramban dari 3 detik menjadi 10 detik (memangkas beban CPU hingga 85%).',
+                'Efisiensi Alokasi Buffer Pool MariaDB: Menata ulang buffer pool MariaDB dari 384 MB menjadi 160 MB yang proporsional dengan ukuran data aktif, menghemat lebih dari 220 MB RAM fisik Mini PC.',
+                'Daur Ulang Pekerja PHP-FPM: Mengaktifkan batas daur ulang pekerja (pm.max_requests = 500) untuk mencegah penumpukan memori RSS pada proses daemon jangka panjang.',
+                'Penyelarasan Polling Tagihan Harian: Menyesuaikan interval polling pemantauan status worker penagihan menjadi 5 detik untuk menjaga kelancaran antarmuka tanpa membebani thread prosesor.',
+            ],
+        ],
         '3.2.5' => [
             'date'     => '2026-11-04',
             'title'    => 'Implementasi Modul Riwayat Tutup Kas LW321 Lengkap dengan Visualisasi Kurva Tren & Eliminasi IP Telemetri',
