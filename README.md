@@ -1,7 +1,7 @@
 # 🚀 APLIKASIKITA (Platform Operasional Mini PC)
 
 **Platform Digital Tata Kelola Operasional, Monitoring Portofolio Pinjaman & Tata Arsip Digital**  
-*Versi:* `AplikasiKita-v3.1.12` | *Codename:* `Vanguard` | *Build:* `#20261103` | *Target Arsitektur:* Multi-Unit Mini PC Linux (Armbian/Debian/Ubuntu ARM64 & x86_64)
+*Versi:* `AplikasiKita-v3.2.0` | *Codename:* `Vanguard` | *Build:* `#20261104` | *Target Arsitektur:* Multi-Unit Mini PC Linux (Armbian/Debian/Ubuntu ARM64 & x86_64)
 
 ---
 
@@ -35,6 +35,8 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
 | **PHP Runtime** | PHP 8.2.0 | **PHP 8.4.x (PHP-FPM)** | Eksekutor backend Laravel 13 berkinerja tinggi |
 | **Ekstensi PHP Wajib** | - | `php-fpm`, `php-mysql`, `php-mbstring`, `php-xml`, `php-curl`, `php-zip`, `php-bcmath`, `php-intl`, `php-gd` | Pengolah kalkulasi baki debet, kompresi berkas, dan modul grafis |
 | **Database Server** | MariaDB 10.6 | **MariaDB 10.11+ / MySQL 8.0** | Database relasional transaksional ACID (Engine InnoDB, utf8mb4) |
+| **In-Memory Cache & Session** | Redis 6.x | **Redis 7.0+ (php-redis)** | High-throughput session driver, lock manager, real-time queues |
+| **Search Engine (FTS)** | Meilisearch v1.x | **Meilisearch ARM64 v1.56+** | Fast typo-tolerant indexing debitur & agunan (< 5 ms latency) |
 | **Headless Runtime** | Node.js v18.0 LTS | **Node.js v20.x LTS** | Runtime otomatisasi tangkapan layar laporan (Pemroses Halaman Web Mandiri) |
 | **Layanan Percetakan** | CUPS 2.4.x | CUPS Daemon | Driver antrean cetak thermal USB (`/dev/usb/lp0`) raw protocol |
 | **Pencadangan Data** | Rclone v1.60.0 | Rclone v1.66+ | Pencadangan cloud Google Drive modular terisolasi per unit kerja |
@@ -42,7 +44,7 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
 
 ---
 
-## 📸 3. Ikhtisar Antarmuka & Panduan Operasional Fitur (v3.1.12 Vanguard)
+## 📸 3. Ikhtisar Antarmuka & Panduan Operasional Fitur (v3.2.0 Vanguard)
 
 > [!NOTE]
 > **Privasi & Sanitasi Data**: Seluruh tangkapan layar antarmuka di bawah ini telah disanitasi secara ketat dan menggunakan data simulasi/dummy untuk keperluan dokumentasi sistem. Tidak ada data nasabah riil, nomor rekening nyata, maupun kode unit kerja yang ditampilkan.

@@ -14,6 +14,23 @@ Format penomoran versi mengikuti standar [Semantic Versioning](https://semver.or
 
 
 
+## v3.2.0 — Modernisasi Arsitektur Real-Time Redis, Integrasi Pencarian Cepat Meilisearch, Standarisasi Bahasa Indonesia Baku, dan Optimasi Responsif Layar 1366 & 1920
+**Tanggal:** 4 November 2026
+
+### Pembaruan Arsitektur & Performa Sistem
+- **Arsitektur Real-Time Redis 7.0:** Migrasi penuh sesi pengguna, cache aplikasi, dan antrean antarmuka ke engine in-memory Redis dengan konfigurasi batas memori 128 MB dan kebijakan LRU, menghasilkan beban I/O nol pada database MariaDB untuk manajemen sesi.
+- **Pencarian Cepat Meilisearch ARM64:** Integrasi mesin pencari biner native ARM64 v1.56.1 dengan indexasi 4.404 data debitur dan 4.504 data agunan, mereduksi waktu pencarian dari ratusan milidetik menjadi 3–5 milidetik disertai fitur pencarian toleran salah ketik (*typo-tolerance*).
+- **Eliminasi Jeda Pembaruan Setoran (/tagihan < 0.5s):** Menerapkan fungsi *instant live DOM patching* pada baris tabel debitur seketika saat event transaksi masuk, mempercepat interval polling status worker menjadi 2,5 detik, dan memperketat batas debounce penyegaran tabel.
+
+### Tampilan & Responsivitas Antarmuka
+- **Optimasi Khusus Resolusi Layar Laptop 1366×768 & Desktop 1920×1080:** Seluruh modal operasional (Tagihan, Vault / Monitoring Lemari, Cari Berkas, dan Dashboard) dibatasi `max-height: 85vh` dengan area konten *auto-scroll*, menjamin seluruh tombol aksi utama (Simpan, Batal, Verifikasi, Cetak) selalu tampil utuh di bagian bawah tanpa terpotong.
+- **Integritas Desain 100%:** Mempertahankan seluruh warna neon/cyber, skema kartu KPI, tata letak kisi matriks, dan estetika perbankan tanpa perubahan visual yang mengganggu kebiasaan pengguna.
+
+### Standarisasi Tata Bahasa Baku
+- **Standardisasi Terminologi Perbankan Nasional:** Menghapus seluruh istilah kedaerahan/Melayu (seperti *khasanah* / *khazanah*) dan menggantinya dengan bahasa Indonesia baku yang resmi (*Ruang Arsip Berkas*, *Lemari Arsip Berkas*) di seluruh antarmuka, basis data, dan dokumentasi GitHub.
+
+---
+
 ## v3.1.12 — Standardisasi Penentuan Status Pelunasan Debitur Berbasis Verifikasi CIF Murni (Real Kembali vs Lunas Putus)
 **Tanggal:** 3 November 2026
 

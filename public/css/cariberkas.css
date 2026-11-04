@@ -677,7 +677,7 @@ html, body {
     width: 90vw !important;
     max-width: 90vw !important;
     height: auto !important;
-    max-height: 95vh !important;
+    max-height: 85vh !important;
     display: flex !important;
     flex-direction: column !important;
     gap: 12px !important;
@@ -2267,4 +2267,45 @@ html, body {
 .btn-ta-ambil-dokumen svg {
     stroke: #ffffff !important;
     flex-shrink: 0 !important;
+}
+
+
+.modal-tukar-agunan-frame {
+    width: 92vw !important;
+    max-width: 1200px !important;
+    max-height: 85vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+}
+
+@media (max-height: 820px) {
+    .cyber-modal-large {
+        max-height: 85vh !important;
+        padding: 10px 18px !important;
+        gap: 8px !important;
+    }
+    .modal-body-proportional {
+        gap: 6px !important;
+        overflow-y: auto !important;
+        flex: 1 !important;
+        min-height: 0 !important;
+    }
+    .premium-target-card {
+        padding: 8px 12px !important;
+        margin-bottom: 2px !important;
+    }
+    .modal-action-buttons-grid .btn-act-card {
+        padding: 8px 14px !important;
+    }
+    .btn-act-icon {
+        width: 32px !important;
+        height: 32px !important;
+    }
+    .reg-modal-toolbar {
+        padding: 6px 12px !important;
+    }
+    .modal-register-container {
+        max-height: 85vh !important;
+    }
 }

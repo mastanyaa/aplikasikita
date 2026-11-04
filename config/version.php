@@ -18,13 +18,13 @@ return [
 
     */
 
-    'version'      => env('APP_VERSION', '3.1.12'),
+    'version'      => env('APP_VERSION', '3.2.0'),
 
     'codename'     => 'Vanguard',
 
-    'build'        => env('APP_BUILD', '20261103'),
+    'build'        => env('APP_BUILD', '20261104'),
 
-    'release_date' => '2026-11-03',
+    'release_date' => '2026-11-04',
 
     'min_php'      => '8.2.0',
 
