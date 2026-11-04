@@ -18,7 +18,7 @@ return [
 
     */
 
-    'version'      => env('APP_VERSION', '3.2.0'),
+    'version'      => env('APP_VERSION', '3.2.1'),
 
     'codename'     => 'Vanguard',
 

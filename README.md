@@ -1,7 +1,7 @@
 # 🚀 APLIKASIKITA (Platform Operasional Mini PC)
 
 **Platform Digital Tata Kelola Operasional, Monitoring Portofolio Pinjaman & Tata Arsip Digital**  
-*Versi:* `AplikasiKita-v3.2.0` | *Codename:* `Vanguard` | *Build:* `#20261104` | *Target Arsitektur:* Multi-Unit Mini PC Linux (Armbian/Debian/Ubuntu ARM64 & x86_64)
+*Versi:* `AplikasiKita-v3.2.1` | *Codename:* `Vanguard` | *Build:* `#20261104` | *Target Arsitektur:* Multi-Unit Mini PC Linux (Armbian/Debian/Ubuntu ARM64 & x86_64)
 
 ---
 
@@ -44,7 +44,7 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
 
 ---
 
-## 📸 3. Ikhtisar Antarmuka & Panduan Operasional Fitur (v3.2.0 Vanguard)
+## 📸 3. Ikhtisar Antarmuka & Panduan Operasional Fitur (v3.2.1 Vanguard)
 
 > [!NOTE]
 > **Privasi & Sanitasi Data**: Seluruh tangkapan layar antarmuka di bawah ini telah disanitasi secara ketat dan menggunakan data simulasi/dummy untuk keperluan dokumentasi sistem. Tidak ada data nasabah riil, nomor rekening nyata, maupun kode unit kerja yang ditampilkan.

@@ -14,6 +14,17 @@ Format penomoran versi mengikuti standar [Semantic Versioning](https://semver.or
 
 
 
+## v3.2.1 — Perbaikan Tampilan CSS Dashboard dan Optimalisasi Substring Pencarian Rekening (Min 5 Digit Angka & Min 3 Huruf)
+**Tanggal:** 4 November 2026
+
+### Pembaruan & Peningkatan Sistem
+- **Perbaikan Tampilan CSS Dashboard:** Merapikan penempatan aturan `@media (max-height: 800px)` ke dalam blok `<style>` pada `css.blade.php`, mengeliminasi kebocoran teks kode CSS di bawah bilah navigasi header dashboard.
+- **Pencarian Substring Rekening Fleksibel (Minimal 5 Digit):** Pengguna kini dapat mencari rekening hanya dengan mengetikkan 5 atau 6 digit acak di bagian tengah nomor rekening (contoh: cukup ketik `029087` untuk menemukan rekening `620101029087101`), berlaku di modul Cari Berkas, Modal Dokumen Agunan, Tagihan Harian, Modal Detail Debitur Dashboard, Dokumen Lunas Putus, dan Monitoring Lemari.
+- **Standarisasi Ambang Batas Minimal Pencarian:** Menerapkan aturan universal: minimal 5 digit angka jika kata kunci berupa angka/rekening, dan minimal 3 karakter huruf jika kata kunci berupa nama debitur.
+- **Penyelarasan Hybrid Query (SQL Substring + Meilisearch Typo Tolerance):** Menggabungkan hasil pencarian substring SQL secara langsung dengan hasil toleransi salah ketik Meilisearch, sehingga pencarian nomor rekening parsial tidak lagi menghasilkan data kosong.
+
+---
+
 ## v3.2.0 — Modernisasi Arsitektur Real-Time Redis, Integrasi Pencarian Cepat Meilisearch, Standarisasi Bahasa Indonesia Baku, dan Optimasi Responsif Layar 1366 & 1920
 **Tanggal:** 4 November 2026
 

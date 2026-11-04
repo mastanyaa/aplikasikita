@@ -75,7 +75,14 @@ document.addEventListener('DOMContentLoaded', function () {
         let searchTimer = null;
 
         if (searchForm) {
-            searchForm.addEventListener('submit', (e) => e.preventDefault());
+            searchForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const text = searchInput.value.trim();
+                const isNumeric = /^\d+$/.test(text);
+                if (text.length === 0 || (isNumeric && text.length >= 5) || (!isNumeric && text.length >= 3)) {
+                    executeLiveSearch(text);
+                }
+            });
         }
 
         searchInput.addEventListener('input', function () {
@@ -1935,8 +1942,13 @@ function tutupModalCariAgunan() {
 
 function filterLiveTabelAgunan(keyword) {
     clearTimeout(timerSearchAgunan);
+    const text = (keyword || '').trim();
+    const isNumeric = /^\d+$/.test(text);
+    if (text.length > 0 && ((isNumeric && text.length < 5) || (!isNumeric && text.length < 3))) {
+        return;
+    }
     timerSearchAgunan = setTimeout(() => {
-        muatDataAgunanGlobal(keyword.trim());
+        muatDataAgunanGlobal(text);
     }, 280);
 }
 
@@ -2324,9 +2336,16 @@ function renderTablePermintaan(data) {
 }
 
 function filterLiveTabelPermintaan(keyword) {
-    const q = (keyword || '').toLowerCase().trim();
+    const qRaw = (keyword || '').trim();
+    const q = qRaw.toLowerCase();
+    const isNumeric = /^\d+$/.test(q);
+    const qDigits = q.replace(/\D/g, '');
+
     if (!q) {
         renderTablePermintaan(rawDataPermintaanBerkas);
+        return;
+    }
+    if ((isNumeric && q.length < 5) || (!isNumeric && q.length < 3)) {
         return;
     }
 
@@ -2334,10 +2353,14 @@ function filterLiveTabelPermintaan(keyword) {
         const pemohon = (item.nama_pemohon || '').toLowerCase();
         const pn = (item.pn_pemohon || '').toLowerCase();
         const deb = (item.nama_debitur || '').toLowerCase();
-        const rek = (item.nomor_rekening || '').toLowerCase();
+        const rekStr = (item.nomor_rekening || '').toLowerCase();
+        const rekDigits = rekStr.replace(/\D/g, '');
         const alasan = (item.alasan_permintaan || '').toLowerCase();
         const catatan = (item.catatan || '').toLowerCase();
-        return pemohon.includes(q) || pn.includes(q) || deb.includes(q) || rek.includes(q) || alasan.includes(q) || catatan.includes(q);
+
+        const rekMatch = rekStr.includes(q) || (qDigits.length >= 5 && rekDigits.includes(qDigits));
+
+        return pemohon.includes(q) || pn.includes(q) || deb.includes(q) || rekMatch || alasan.includes(q) || catatan.includes(q);
     });
 
     renderTablePermintaan(filtered);
