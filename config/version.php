@@ -18,7 +18,7 @@ return [
 
     */
 
-    'version'      => env('APP_VERSION', '3.2.1'),
+    'version'      => env('APP_VERSION', '3.2.2'),
 
     'codename'     => 'Vanguard',
 
@@ -43,6 +43,15 @@ return [
     */
 
     'changelog' => [
+        '3.2.2' => [
+            'date'     => '2026-11-04',
+            'title'    => 'Peningkatan Presisi Pencarian Nama & Rekening Multi-Token Tanpa Hasil Fuzzy Liar di Cari Berkas dan Cari Agunan',
+            'changes'  => [
+                'Pencarian Nama Presisi Multi-Token AND: Mengeliminasi hasil pencarian fuzzy Meilisearch yang tidak relevan (seperti hasil NOVA LIA saat mencari "novi r" atau SAMO saat mencari "samsul had"). Nama debitur dan pemilik agunan kini wajib memuat frase kata atau seluruh token kata yang dicari.',
+                'Prioritas Frase Eksak: Mengurutkan hasil pencarian nama yang memuat frase eksak di urutan teratas secara otomatis.',
+                'Dukungan Substring Rekening Minimal 5 Digit & Teks Minimal 3 Huruf: Menjamin seluruh input pencarian rekening dapat mendeteksi potongan nomor rekening minimal 5 angka dan input teks minimal 3 huruf secara konsisten.',
+            ],
+        ],
         '3.1.12' => [
             'date'     => '2026-11-03',
             'title'    => 'Standardisasi Penentuan Status Pelunasan Debitur Berbasis Verifikasi CIF Murni pada Data Harian (Real Kembali vs Lunas Putus)',

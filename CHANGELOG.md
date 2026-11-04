@@ -14,6 +14,16 @@ Format penomoran versi mengikuti standar [Semantic Versioning](https://semver.or
 
 
 
+## v3.2.2 — Peningkatan Presisi Pencarian Nama & Rekening Multi-Token Tanpa Hasil Fuzzy Liar di Cari Berkas dan Cari Agunan
+**Tanggal:** 4 November 2026
+
+### Pembaruan & Peningkatan Sistem
+- **Pencarian Nama Presisi Multi-Token AND:** Mengeliminasi hasil pencarian fuzzy liar Meilisearch yang tidak relevan (seperti kemunculan "NOVA LIA" saat mencari "novi r" atau "SAMO" saat mencari "samsul had"). Nama debitur dan nama pemilik agunan kini wajib memuat frase kata atau seluruh token kata yang dicari.
+- **Prioritas Frase Eksak:** Mengurutkan hasil pencarian nama yang memuat frase eksak di urutan teratas secara otomatis sehingga petugas tidak perlu lagi memeriksa satu per satu.
+- **Dukungan Substring Rekening Minimal 5 Digit & Teks Minimal 3 Huruf:** Menjamin seluruh input pencarian rekening dapat mendeteksi potongan nomor rekening minimal 5 angka (misal `029087` untuk `620101029087101`) dan input teks minimal 3 huruf secara konsisten.
+
+---
+
 ## v3.2.1 — Perbaikan Tampilan CSS Dashboard dan Optimalisasi Substring Pencarian Rekening (Min 5 Digit Angka & Min 3 Huruf)
 **Tanggal:** 4 November 2026
 
