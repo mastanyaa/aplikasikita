@@ -34,10 +34,15 @@ Format penomoran versi mengikuti standar [Semantic Versioning](https://semver.or
 **Tanggal:** 4 November 2026
 
 ### Pembaruan & Peningkatan Sistem
-- **Modul Mandiri Riwayat Tutup Kas (/riwayat):** Menyimpan dan menyajikan data resmi hasil olahan dashboard pasca-penutupan kas harian (EOD H-1) dengan arsitektur terpisah dari import data dan tautan navigasi mandiri di sidebar.
-- **Visualisasi Kurva & Laporan Lengkap:** Menghadirkan 3 grafik interaktif Chart.js offline (Kurva Tren Baki Debet, Kurva Dual-Axis Kualitas Kredit NPL & DPK, dan Diagram Batang Net Delta Pertumbuhan Harian) serta modal drilldown rincian per Mantri.
+- **Modul Mandiri Riwayat Tutup Kas (/riwayat):** Menyimpan dan menyajikan data resmi hasil olahan dashboard pasca-penutupan kas harian (EOD H-1) dengan arsitektur database terpisah, snapshot otomatis saat impor berkas LW321, dan tautan navigasi mandiri di sidebar tepat di bawah Monitoring Tagihan.
+- **Visualisasi Komprehensif Multi-Tab & Grafik Chart.js Offline:**
+  1. *Tab 1 - Ringkasan Portofolio & Tren Harian:* 6 KPI eksekutif, Kurva Area Spline Baki Debet, Kurva Dual-Axis Kualitas Kredit (NPL & DPK dengan batas toleransi 2.5%), Diagram Batang Net Expansion Harian, serta tabel riwayat komparasi H-1 s.d. H-10.
+  2. *Tab 2 - Kinerja & Matriks Mantri (Leaderboard):* Diagram sebaran portofolio OS Mantri, Diagram Rasio NPL per Mantri, serta Matriks 15 Kolom komprehensif (Kol 1-5, NPL, DPK, Realisasi, Run-Off, Net Expansion, Tunggakan, Kuadran).
+  3. *Tab 3 - Kualitas Aset, DPK & Loan at Risk (LAR):* Pengawasan Kolektibilitas 1-5, Rasio DPK (Kol 2), dan perhitungan indikator kehati-hatian perbankan Loan at Risk (LAR = Kol 2 + NPL).
+  4. *Tab 4 - Pola Angsuran & Likuiditas:* Pemetaan pola pembayaran debitur Musiman/Yarnen vs Bulanan dan analisis arus kas Realisasi vs Run-Off.
+- **Modal Time-Machine Drilldown & Ekspor Data:** Modal inspeksi historis untuk merekonstruksi portofolio mantri pada tanggal lampau manapun serta fitur Ekspor CSV/Excel dan Print Laporan formal.
 - **Penyelarasan Tanggal Posisi LW321 di Header Dashboard:** Mengoreksi tampilan label posisi tanggal berkas LW321 menjadi tanggal resmi penutupan kas kemarin (03/11/2026) secara presisi tanpa mengubah nilai periode operasional harian.
-- **Eliminasi IP Server pada Telemetri:** Menghapus pencantuman alamat IP lokal server pada modal telemetri demi privasi dan keamanan infrastruktur.
+- **Eliminasi Total IP Server pada Telemetri:** Menghapus pencantuman alamat IP lokal server dari modal telemetri dan endpoint API demi kepatuhan privasi dan keamanan infrastruktur.
 
 ---
 
