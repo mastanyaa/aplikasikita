@@ -38,7 +38,7 @@ return [
 
 
 
-    'version'      => env('APP_VERSION', '3.2.4'),
+    'version'      => env('APP_VERSION', '3.2.5'),
 
 
 
@@ -87,6 +87,16 @@ return [
 
 
     'changelog' => [
+        '3.2.5' => [
+            'date'     => '2026-11-04',
+            'title'    => 'Implementasi Modul Riwayat Tutup Kas LW321 Lengkap dengan Visualisasi Kurva Tren & Eliminasi IP Telemetri',
+            'changes'  => [
+                'Modul Mandiri Riwayat Tutup Kas (/riwayat): Menyimpan dan menyajikan data resmi hasil olahan dashboard pasca-penutupan kas harian (EOD H-1) dengan arsitektur terpisah dari import data.',
+                'Visualisasi Kurva & Laporan Lengkap: Menghadirkan 3 grafik interaktif Chart.js offline (Kurva Tren Baki Debet, Kurva Dual-Axis Kualitas Kredit NPL & DPK, dan Diagram Batang Net Delta Pertumbuhan Harian) serta modal drilldown rincian per Mantri.',
+                'Penyelarasan Tanggal Posisi LW321 di Header Dashboard: Mengoreksi tampilan label posisi tanggal berkas LW321 menjadi tanggal resmi penutupan kas kemarin (03/11/2026) secara presisi tanpa mengubah nilai periode operasional harian.',
+                'Eliminasi IP Server pada Telemetri: Menghapus pencantuman alamat IP lokal server pada modal telemetri demi privasi dan keamanan infrastruktur.',
+            ],
+        ],
         '3.2.4' => [
             'date'     => '2026-11-04',
             'title'    => 'Integrasi Telemetri Hardware Mini PC di Header Dashboard dan Eliminasi Total Fitur Audit Ticker',
