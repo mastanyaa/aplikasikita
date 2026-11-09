@@ -134,6 +134,19 @@ document.addEventListener('DOMContentLoaded', function () {
             cekPollingPermintaanBerkas();
         }, 30000);
     }
+    
+    try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const modalTarget = (urlParams.get('modal') || urlParams.get('tab') || '').toLowerCase();
+        if (modalTarget === 'berkas-dipinjam' || modalTarget === 'dipinjam') {
+            setTimeout(() => { if (typeof bukaModalSedangDipinjam === 'function') bukaModalSedangDipinjam(); }, 350);
+        } else if (modalTarget === 'cari-agunan' || modalTarget === 'agunan') {
+            setTimeout(() => { if (typeof bukaModalCariAgunan === 'function') bukaModalCariAgunan(); }, 350);
+        } else if (modalTarget === 'permintaan' || modalTarget === 'persetujuan' || modalTarget === 'permintaanberkas') {
+            setTimeout(() => { if (typeof bukaModalPermintaanBerkas === 'function') bukaModalPermintaanBerkas(); }, 350);
+        }
+    } catch(e) {}
+
 });
 
 function handleRowClick(trElement) {
