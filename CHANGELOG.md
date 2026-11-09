@@ -24,6 +24,18 @@ Format penomoran versi mengikuti standar [Semantic Versioning](https://semver.or
 
 ---
 
+## v3.3.0 — Porting Modul Pengaturan Akun (Kelola Pengguna & Ganti Password) & Monitoring Tagihan
+**Tanggal:** 10 November 2026
+
+### Pembaruan & Peningkatan Sistem
+- **Modul Pengaturan Akun:** Porting dan modernisasi fitur kelola user dan ganti password dari kode legacy PHP native ke Laravel controller & Blade terenkripsi dengan proteksi hak akses administrator dan auth.
+- **Kelola Pengguna (/pengaturan/pengguna):** CRUD user lengkap, filter role, reset password, toggle status aktif/nonaktif, sinkronisasi mantri otomatis dari data kredit, dan pembersihan user mantri untuk unit baru.
+- **Ganti Password Mandiri (/pengaturan/ganti-password):** Form ganti password aman dengan validasi kata sandi lama dan hash Bcrypt.
+- **Renaming Menu:** Pengubahan label 'Penagihan Harian' menjadi 'Monitoring Tagihan' pada navigasi sidebar dan seluruh modul terkait.
+- **Desain Glassmorphism Responsif:** Tampilan UI modern konsisten dengan tema dark/light mode AplikasiKita yang responsif di resolusi 1366x768 dan 1920x1080.
+
+---
+
 ## v3.2.9 — Floating Glass Drawer Sidebar, Backdrop Blur, Akselerasi Navigasi & Penataan Modul Kearsipan
 **Tanggal:** 9 November 2026
 
