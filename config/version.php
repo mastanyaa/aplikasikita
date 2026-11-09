@@ -38,7 +38,7 @@ return [
 
 
 
-    'version'      => env('APP_VERSION', '3.2.6'),
+    'version'      => env('APP_VERSION', '3.2.9'),
 
 
 
@@ -46,11 +46,11 @@ return [
 
 
 
-    'build'        => env('APP_BUILD', '20261104'),
+    'build'        => env('APP_BUILD', '20261109'),
 
 
 
-    'release_date' => '2026-11-04',
+    'release_date' => '2026-11-09',
 
 
 

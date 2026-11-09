@@ -24,6 +24,17 @@ Format penomoran versi mengikuti standar [Semantic Versioning](https://semver.or
 
 ---
 
+## v3.2.9 — Floating Glass Drawer Sidebar, Backdrop Blur, Akselerasi Navigasi & Penataan Modul Kearsipan
+**Tanggal:** 9 November 2026
+
+### Pembaruan & Peningkatan Sistem
+- **Floating Glass Drawer Sidebar (Zero Layout Shift):** Transformasi sidebar menjadi laci melayang independen di atas konten halaman dengan efek kaca buram (*glassmorphism backdrop blur*) tanpa menggeser tata letak lembar kerja portofolio.
+- **Speculative Hover Prefetcher:** Akselerasi perpindahan antar modul monitoring dan kearsipan menggunakan prefetch tautan saat kursor melayang (*hover*), memangkas latensi navigasi.
+- **Penyempurnaan Kueri Modul Cari Berkas:** Menghilangkan serialisasi closure cache PDO pada mesin pencarian berkas pinjaman (`/cariberkas`) sehingga seluruh role (Admin, Kaunit, Brimen, CS, SOL) dapat mengakses direktori fisik arsip tanpa error 500.
+- **Ergonomi Navigasi & Identitas Aplikasi:** Penataan header sidebar dengan badge versi aplikasi resmi `v3.2.9` (bukan PRO), penempatan kartu profil pengguna di bagian bawah bersebelahan dengan jam aktif WIB dan tombol keluar aplikasi, serta footer global penuh selebar layar.
+
+---
+
 ## v3.2.6 — Optimasi Kinerja Komprehensif: Arsitektur Redis In-Memory, Efisiensi Buffer MariaDB, Daur Ulang PHP-FPM, dan Penataan Frekuensi Polling Realtime
 **Tanggal:** 4 November 2026
 
