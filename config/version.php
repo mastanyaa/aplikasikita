@@ -38,7 +38,7 @@ return [
 
 
 
-    'version'      => env('APP_VERSION', '3.3.1'),
+    'version'      => env('APP_VERSION', '3.3.2'),
     'codename'     => 'Vanguard',
     'build'        => env('APP_BUILD', '20261111'),
     'release_date' => '2026-11-11',
@@ -52,6 +52,17 @@ return [
     */
 
     'changelog' => [
+        '3.3.2' => [
+            'date'     => '2026-11-11',
+            'title'    => 'Pusat Manajemen Lisensi & Katalog Modul Sistem, Mode Simulasi Dummy Brimen, dan Pengetatan Hak Akses Rute',
+            'changes'  => [
+                'Halaman Mandiri Manajemen Lisensi (/pengaturan/lisensi): Menghadirkan pusat kontrol status lisensi hardware Mini PC, telemetri sertifikat HMAC-SHA256, aktivasi token offline, dan salin format registrasi instan.',
+                'Katalog & Registri Modul Terpusat (config/modules.php): Mendaftarkan seluruh fitur sistem ke dalam kategori resmi (Monitoring, Brimen, Sistem) dengan audit status real-time (Aktif Penuh, Mode Simulasi Dummy, Terkunci).',
+                'Simulasi Murni Mode Demo Lisensi Brimen: Menjamin sistem berlisensi Brimen menyajikan 100% data sintetis simulasi pada Dashboard dan modal rincian debitur tanpa menyentuh maupun membocorkan data nasabah riil.',
+                'Pengetatan Middleware Hak Akses: Memblokir sub-fitur monitoring kredit riil (Tagihan, Realisasi, Kontrol Tagihan, Import) pada lisensi Brimen dan mengisolasi penuh modul kearsipan pada lisensi Monitoring.',
+                'Panduan Arsitektur Pengembangan Modul: Menyediakan standar baku pengelompokan dan pendaftaran menu baru di masa mendatang langsung pada antarmuka manajemen lisensi.',
+            ],
+        ],
         '3.3.1' => [
             'date'     => '2026-11-11',
             'title'    => 'Pembersihan Total Modul Legacy, Eliminasi Berkas Eksperimental, dan Optimalisasi Pipeline Enkripsi AES-256',

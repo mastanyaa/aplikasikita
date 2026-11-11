@@ -24,6 +24,18 @@ Format penomoran versi mengikuti standar [Semantic Versioning](https://semver.or
 
 ---
 
+## v3.3.2 — Pusat Manajemen Lisensi & Katalog Modul Sistem, Mode Simulasi Dummy Brimen, dan Pengetatan Hak Akses Rute
+**Tanggal:** 11 November 2026
+
+### Pembaruan & Peningkatan Sistem
+- **Halaman Mandiri Manajemen Lisensi (`/pengaturan/lisensi`):** Menghadirkan antarmuka eksekutif untuk audit keabsahan lisensi hardware Mini PC, verifikasi sertifikat kriptografi offline HMAC-SHA256, aktivasi token lisensi baru, dan fitur salin format registrasi instan untuk WhatsApp.
+- **Katalog & Registri Modul Terpusat (`config/modules.php`):** Mengelompokkan seluruh menu dan kapabilitas sistem secara transparan ke dalam 3 modul utama (`Monitoring`, `Brimen`, `Sistem`) dengan penayangan status real-time (`Aktif Penuh`, `Mode Simulasi Dummy`, `Terkunci`).
+- **Simulasi Murni Mode Demo Lisensi Brimen:** Memastikan unit berlisensi Brimen (Kearsipan Saja) menyajikan 100% data sintetis simulasi pada Dashboard dan modal rincian debitur tanpa menyentuh maupun membocorkan database produksi riil.
+- **Pengetatan Middleware Hak Akses:** Menutup rapat seluruh sub-fitur monitoring kredit riil (Tagihan, Realisasi, Kontrol Tagihan, Import) pada lisensi Brimen serta mengisolasi penuh modul kearsipan pada lisensi Monitoring.
+- **Panduan Arsitektur Pengembangan Modul:** Menyediakan standar baku pengelompokan fitur baru dan contoh konfigurasi pendaftaran menu di masa mendatang langsung pada antarmuka sistem.
+
+---
+
 ## v3.3.1 — Pembersihan Total Modul Legacy, Eliminasi Berkas Eksperimental & Optimalisasi Enkripsi AES-256
 **Tanggal:** 11 November 2026
 
