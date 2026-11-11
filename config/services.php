@@ -3,7 +3,11 @@
 return [
 
     'agent' => [
-        'secret_key' => env('AGENT_SECRET_KEY', 'AgentSecretKey2026_9876543210x1'),
+        'secret_key' => env('AGENT_SECRET_KEY', 'AplikasiKitaSecretKey2026_9876543210x1'),
+    ],
+
+    'license' => [
+        'master_key' => env('LICENSE_MASTER_KEY'),
     ],
 
 

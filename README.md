@@ -1,7 +1,7 @@
 # 🚀 APLIKASIKITA (Platform Operasional Mini PC)
 
 **Platform Digital Tata Kelola Operasional, Monitoring Portofolio Pinjaman & Tata Arsip Digital**  
-*Versi:* `AplikasiKita-v3.2.9` | *Codename:* `Vanguard` | *Build:* `#20261109` | *Target Arsitektur:* Multi-Unit Mini PC Linux (Armbian/Debian/Ubuntu ARM64 & x86_64)
+*Versi:* `AplikasiKita-v3.3.0` | *Codename:* `Vanguard` | *Build:* `#20261111` | *Target Arsitektur:* Multi-Unit Mini PC Linux (Armbian/Debian/Ubuntu ARM64 & x86_64)
 
 ---
 
@@ -250,20 +250,7 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
   - **Panel Kontrol Layanan Sistem**: Status real-time Nginx Web Server, PHP-FPM, Database MariaDB, WhatsApp Gateway, dan CUPS Printing Daemon.
   - **Manajemen Daya & Pemeliharaan**: Tombol Reboot Server Aman dan Shutdown Terjadwal.
   - **Pencadangan Cloud Google Drive**: Modul cadangan otomatis terenkripsi per unit kerja dengan pemantauan kuota penyimpanan cloud.
-  - **Informasi Versi & Pembaruan**: Nomor versi terpasang (`v3.1.12 Vanguard`), hash komit Git, dan status sinkronisasi.
-
----
-
-### 9. Keamanan Jaringan, Firewall LAN & Whitelist IP Subnet (`/pengaturan/server?tab=security`)
-
-![Keamanan Jaringan & Whitelist IP](docs/screenshots/09_server_security_network.png)
-
-- **Tujuan Operasional**: Pengamanan perimeter jaringan lokal LAN kantor unit dan manajemen pembatasan hak akses perangkat.
-- **Fitur Utama**:
-  - **Konfigurasi Antarmuka Ganda**: Pengaturan IP Ethernet LAN (Standar Suffix `.197`) dan IP Wi-Fi Nirkabel (Standar Suffix `.200`).
-  - **Whitelist Akses Nirkabel**: Pengaturan 3 slot IP khusus untuk akses perangkat bergerak terpercaya (Kaunit & Administrator).
-  - **Monitoring Status Jaringan**: Pengujian latensi gateway lokal dan status perangkat yang sedang terhubung.
-  - **Proteksi Akses Berlapis**: Otentikasi keamanan bertingkat untuk mencegah perubahan konfigurasi jaringan tanpa otorisasi.
+  - **Informasi Versi & Pembaruan**: Nomor versi terpasang (`v3.3.0 Vanguard`), hash komit Git, dan status sinkronisasi.
 
 ---
 
@@ -277,6 +264,18 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
   - Validasi Skema Data Otomatis: Pencegahan inkonsistensi baris dan deteksi duplikasi rekening sebelum komit ke basis data.
   - Ringkasan Hasil Impor: Informasi jumlah baris sukses diproses, baki debet total, dan log waktu pemrosesan.
   - Perlindungan Integritas Database Transaksional ACID: Rollback otomatis jika terjadi kegagalan pembacaan baris data.
+
+---
+
+### 11. Pengaturan Akun & Hak Akses Pengguna (`/pengaturan/pengguna` & `/pengaturan/ganti-password`)
+
+- **Tujuan Operasional**: Manajemen akun pengguna, sinkronisasi profil mantri, serta fasilitas mandiri pembaruan kata sandi operasional terenkripsi penuh.
+- **Fitur Utama**:
+  - **Kelola Pengguna Multi-Peran**: Manajemen akun terpadu untuk peran Administrator, Kaunit, Mantri, Petugas Brimen, Customer Service, dan SOL.
+  - **Sinkronisasi Mantri Otomatis**: Integrasi pencocokan akun mantri otomatis terhadap data kredit aktif unit kerja.
+  - **Reset Kata Sandi Cepat & Toggle Status Akun**: Kontrol instan aktivasi akun dan reset sandi dengan konfirmasi visual dialog.
+  - **Ganti Password Mandiri**: Antarmuka responsif bagi pengguna untuk memperbarui kata sandi dengan enkripsi hash Bcrypt standar industri.
+  - **Arsitektur 100% Laravel Terenkripsi**: Mengeliminasi file PHP skrip legacy mandiri menjadi controller dan view Laravel yang aman dan terenkripsi AES-256.
 
 ---
 

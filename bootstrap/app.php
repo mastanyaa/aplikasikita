@@ -6,6 +6,7 @@ use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
 use App\Http\Middleware\SecurityAccessMiddleware;
 use App\Http\Middleware\VerifyAgentKey;
+use Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -28,6 +29,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // 3. Pasang filter keamanan akses jaringan setelah inisialisasi sesi web
         $middleware->web(append: [
             SecurityAccessMiddleware::class,
+            AddLinkHeadersForPreloadedAssets::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

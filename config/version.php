@@ -39,54 +39,41 @@ return [
 
 
     'version'      => env('APP_VERSION', '3.3.0'),
-
-
-
     'codename'     => 'Vanguard',
-
-
-
-    'build'        => env('APP_BUILD', '20261110'),
-
-
-
-    'release_date' => '2026-11-10',
-
-
-
+    'build'        => env('APP_BUILD', '20261111'),
+    'release_date' => '2026-11-11',
     'min_php'      => '8.2.0',
-
-
-
     'default_uker' => env('APP_UKER', 'UNIT KERJA'),
 
-
-
-
-
-
-
     /*
-
-
-
     |--------------------------------------------------------------------------
-
-
-
     | Catatan Rilis & Riwayat Pembaruan (Changelog)
-
-
-
     |--------------------------------------------------------------------------
-
-
-
     */
 
-
-
     'changelog' => [
+        '3.3.0' => [
+            'date'     => '2026-11-11',
+            'title'    => 'Porting Modul Pengaturan Akun, Restorasi Dashboard Blade, Pembersihan Modul Deprecated, dan Eliminasi Request Berkas',
+            'changes'  => [
+                'Porting Modul Pengaturan Akun: Porting dan modernisasi kelola user dan ganti password mandiri dari PHP native ke Laravel controller & Blade terenkripsi dengan proteksi otorisasi penuh.',
+                'Restorasi Penuh Dashboard Portofolio: Pemulihan tampilan Dashboard 30-kolom pixel-perfect ke Blade asli dengan formula delta, kuadran, dan dashboard.js 246 KB utuh.',
+                'Pembersihan Modul Usang: Menghapus modul Monitoring Unit, Kontrol Tagihan, dan Calon NPL (CNPL) dari controller, views, dan sidebar navigasi, mengarahkan rute kompatibilitas ke /dashboard.',
+                'Eliminasi Tombol Request Berkas: Menghapus tombol pengajuan request berkas dari modal detail debitur dan profil debitur.',
+                'Live Monitoring Ticker Footer Universal: Standarisasi footer ticker 26px konsisten di seluruh halaman aplikasi.',
+                'Pembersihan Lingkungan Produksi: Menghapus controller dan views usang dari direktori server dan workspace developer.',
+            ],
+        ],
+        '3.2.9' => [
+            'date'     => '2026-11-09',
+            'title'    => 'Floating Glass Drawer Sidebar, Backdrop Blur, Akselerasi Navigasi & Penataan Modul Kearsipan',
+            'changes'  => [
+                'Floating Glass Drawer Sidebar: Transformasi sidebar menjadi drawer melayang independen dengan efek glassmorphism backdrop blur tanpa menggeser layout lembar kerja.',
+                'Speculative Hover Prefetcher: Akselerasi perpindahan antar modul monitoring dan kearsipan menggunakan prefetch tautan saat kursor melayang.',
+                'Penyempurnaan Kueri Modul Cari Berkas: Menghilangkan serialisasi closure cache PDO pada pencarian berkas pinjaman (/cariberkas).',
+                'Ergonomi Navigasi & Identitas Aplikasi: Penataan badge versi resmi v3.2.9 di sidebar, kartu profil pengguna di bagian bawah dengan jam aktif WIB, dan footer ticker selebar layar.',
+            ],
+        ],
         '3.2.6' => [
             'date'     => '2026-11-04',
             'title'    => 'Optimasi Kinerja Komprehensif: Arsitektur Redis In-Memory, Efisiensi Buffer MariaDB, Daur Ulang PHP-FPM, dan Penataan Frekuensi Polling Realtime',

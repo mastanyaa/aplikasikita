@@ -1,9 +1,89 @@
+@import './fonts.css';
 @import 'tailwindcss';
+@import 'tw-animate-css';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
+@custom-variant dark (&:is(.dark *));
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views*.blade.php';
+@source '../js*.js';
+
+:root {
+    --background: oklch(0.985 0.003 247.85);
+    --foreground: oklch(0.18 0.025 255);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.18 0.025 255);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.18 0.025 255);
+    --primary: oklch(0.42 0.145 255);
+    --primary-foreground: oklch(0.985 0.003 247.85);
+    --secondary: oklch(0.945 0.012 248);
+    --secondary-foreground: oklch(0.24 0.03 255);
+    --muted: oklch(0.955 0.008 248);
+    --muted-foreground: oklch(0.5 0.025 252);
+    --accent: oklch(0.7 0.18 45);
+    --accent-foreground: oklch(0.99 0.003 45);
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.985 0 0);
+    --border: oklch(0.9 0.012 248);
+    --input: oklch(0.89 0.012 248);
+    --ring: oklch(0.48 0.15 255);
+    --radius: 0.625rem;
+}
+
+.dark {
+    --background: oklch(0.145 0.02 256);
+    --foreground: oklch(0.96 0.006 248);
+    --card: oklch(0.19 0.022 256);
+    --card-foreground: oklch(0.96 0.006 248);
+    --popover: oklch(0.19 0.022 256);
+    --popover-foreground: oklch(0.96 0.006 248);
+    --primary: oklch(0.62 0.16 250);
+    --primary-foreground: oklch(0.13 0.02 256);
+    --secondary: oklch(0.25 0.025 256);
+    --secondary-foreground: oklch(0.96 0.006 248);
+    --muted: oklch(0.24 0.02 256);
+    --muted-foreground: oklch(0.7 0.02 250);
+    --accent: oklch(0.72 0.175 48);
+    --accent-foreground: oklch(0.14 0.02 48);
+    --destructive: oklch(0.64 0.21 25);
+    --destructive-foreground: oklch(0.985 0 0);
+    --border: oklch(0.29 0.025 256);
+    --input: oklch(0.29 0.025 256);
+    --ring: oklch(0.62 0.16 250);
+}
+
+@theme inline {
+    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
 }
