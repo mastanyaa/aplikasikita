@@ -38,7 +38,7 @@ return [
 
 
 
-    'version'      => env('APP_VERSION', '3.3.0'),
+    'version'      => env('APP_VERSION', '3.3.1'),
     'codename'     => 'Vanguard',
     'build'        => env('APP_BUILD', '20261111'),
     'release_date' => '2026-11-11',
@@ -52,6 +52,17 @@ return [
     */
 
     'changelog' => [
+        '3.3.1' => [
+            'date'     => '2026-11-11',
+            'title'    => 'Pembersihan Total Modul Legacy, Eliminasi Berkas Eksperimental, dan Optimalisasi Pipeline Enkripsi AES-256',
+            'changes'  => [
+                'Pembersihan Total Modul Legacy: Mengeliminasi seluruh sisa berkas controller dan views Monitoring Unit, Kontrol Tagihan, dan Calon NPL (CNPL) dari sistem.',
+                'Sanitasi Build & Tooling: Membersihkan sisa dependensi eksperimental React (app.tsx, vite-env.d.ts, dashboard-sheet.css) dan mengunci konfigurasi Vite pada arsitektur Blade murni.',
+                'Eliminasi Tombol Permintaan Berkas: Mengunci penghapusan tombol Request Berkas pada modal rincian debitur.',
+                'Enkripsi AES-256 & Kompilasi Server: Pembaruan penuh seluruh binary wrapper PHP terenkripsi dan Blade views terkompilasi bebas komentar.',
+                'Stabilitas Produksi: Pengujian otomatis seluruh rute sistem dengan status responsif dan pengamanan token sesi Adminer.',
+            ],
+        ],
         '3.3.0' => [
             'date'     => '2026-11-11',
             'title'    => 'Porting Modul Pengaturan Akun, Restorasi Dashboard Blade, Pembersihan Modul Deprecated, dan Eliminasi Request Berkas',

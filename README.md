@@ -1,7 +1,7 @@
 # 🚀 APLIKASIKITA (Platform Operasional Mini PC)
 
 **Platform Digital Tata Kelola Operasional, Monitoring Portofolio Pinjaman & Tata Arsip Digital**  
-*Versi:* `AplikasiKita-v3.3.0` | *Codename:* `Vanguard` | *Build:* `#20261111` | *Target Arsitektur:* Multi-Unit Mini PC Linux (Armbian/Debian/Ubuntu ARM64 & x86_64)
+*Versi:* `AplikasiKita-v3.3.1` | *Codename:* `Vanguard` | *Build:* `#20261111` | *Target Arsitektur:* Multi-Unit Mini PC Linux (Armbian/Debian/Ubuntu ARM64 & x86_64)
 
 ---
 
@@ -250,7 +250,7 @@ Untuk menjamin kinerja tinggi, stabilitas 24/7, dan latensi rendah pada lingkung
   - **Panel Kontrol Layanan Sistem**: Status real-time Nginx Web Server, PHP-FPM, Database MariaDB, WhatsApp Gateway, dan CUPS Printing Daemon.
   - **Manajemen Daya & Pemeliharaan**: Tombol Reboot Server Aman dan Shutdown Terjadwal.
   - **Pencadangan Cloud Google Drive**: Modul cadangan otomatis terenkripsi per unit kerja dengan pemantauan kuota penyimpanan cloud.
-  - **Informasi Versi & Pembaruan**: Nomor versi terpasang (`v3.3.0 Vanguard`), hash komit Git, dan status sinkronisasi.
+  - **Informasi Versi & Pembaruan**: Nomor versi terpasang (`v3.3.1 Vanguard`), hash komit Git, dan status sinkronisasi.
 
 ---
 

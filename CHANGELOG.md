@@ -24,6 +24,18 @@ Format penomoran versi mengikuti standar [Semantic Versioning](https://semver.or
 
 ---
 
+## v3.3.1 — Pembersihan Total Modul Legacy, Eliminasi Berkas Eksperimental & Optimalisasi Enkripsi AES-256
+**Tanggal:** 11 November 2026
+
+### Pembaruan & Peningkatan Sistem
+- **Pembersihan Total Modul Legacy:** Menghapus seluruh controller, views, dan dependensi halaman `Monitoring Unit`, `Kontrol Tagihan`, dan `Calon NPL (CNPL)` dari struktur proyek dan server.
+- **Sanitasi Build & Konfigurasi:** Mengeliminasi seluruh berkas eksperimental React (`app.tsx`, `vite-env.d.ts`, `dashboard-sheet.css`) dan menormalkan kembali konfigurasi `vite.config.js` serta `app.css` ke standar Laravel Blade native.
+- **Eliminasi Tombol Permintaan Berkas:** Mengunci penghapusan tombol pengajuan "Request Berkas" dari modal detail debitur dan modal profil debitur.
+- **Pipeline Kompilasi & Enkripsi AES-256:** Memperbarui kompilasi server-side seluruh Blade views dan mengenkripsi logika core PHP dengan cipher AES-256 (loader `hex2bin` tersamar bebas komentar).
+- **Verifikasi & Integritas Sistem:** Pengujian otomatis seluruh rute server Mini PC dengan status responsif normal dan proteksi token sesi.
+
+---
+
 ## v3.3.0 — Porting Pengaturan Akun, Restorasi Blade Dashboard, Pembersihan Modul Deprecated & Ticker Universal
 **Tanggal:** 11 November 2026
 
